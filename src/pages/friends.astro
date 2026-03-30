@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Card from "../components/Card.astro";
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout
@@ -144,8 +145,8 @@ import Card from "../components/Card.astro";
           </p>
 
           <div class="contribute-cta">
-            <a href="/contact" class="btn btn--primary">Neem contact op</a>
-            <a href="/contact" class="btn btn--outline-dark">Stuur een e-mail</a>
+            <a href={`${base}contact`} class="btn btn--primary">Neem contact op</a>
+            <a href={`${base}contact`} class="btn btn--outline-dark">Stuur een e-mail</a>
           </div>
         </div>
 
@@ -167,7 +168,7 @@ import Card from "../components/Card.astro";
                 Elke maandag, 19:45 – 22:00
               </li>
             </ul>
-            <a href="/contact" class="aside-link">Contact &rarr;</a>
+            <a href={`${base}contact`} class="aside-link">Contact &rarr;</a>
           </div>
         </aside>
       </div>
