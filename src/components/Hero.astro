@@ -1,0 +1,147 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  description?: string;
+  ctaPrimary?: { label: string; href: string };
+  ctaSecondary?: { label: string; href: string };
+  compact?: boolean;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  ctaPrimary,
+  ctaSecondary,
+  compact = false,
+} = Astro.props;
+---
+
+<section class={`hero ${compact ? "hero--compact" : ""}`} aria-label="Introductie">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-pattern"></div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content container">
+    {subtitle && <p class="hero-eyebrow">{subtitle}</p>}
+    <h1 class="hero-title">{title}</h1>
+    {description && <p class="hero-description">{description}</p>}
+    {(ctaPrimary || ctaSecondary) && (
+      <div class="hero-actions">
+        {ctaPrimary && (
+          <a href={ctaPrimary.href} class="btn btn--primary">{ctaPrimary.label}</a>
+        )}
+        {ctaSecondary && (
+          <a href={ctaSecondary.href} class="btn btn--outline">{ctaSecondary.label}</a>
+        )}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero--compact {
+    min-height: 280px;
+  }
+
+  /* Background: layered CSS pattern simulating a dignified dark texture */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-primary);
+    /* Subtle diagonal line pattern */
+    background-image:
+      repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 40px,
+        rgba(255, 255, 255, 0.018) 40px,
+        rgba(255, 255, 255, 0.018) 80px
+      ),
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(255, 255, 255, 0.012) 40px,
+        rgba(255, 255, 255, 0.012) 80px
+      );
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgba(15, 26, 48, 0.6) 0%,
+      rgba(26, 42, 74, 0.2) 60%,
+      rgba(201, 146, 58, 0.08) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding-block: var(--space-4xl);
+    max-width: 760px;
+  }
+
+  .hero--compact .hero-content {
+    padding-block: var(--space-2xl);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent-light);
+    margin-bottom: var(--space-md);
+  }
+
+  .hero-title {
+    color: var(--color-white);
+    font-size: clamp(2.2rem, 6vw, 3.75rem);
+    line-height: 1.15;
+    margin-bottom: var(--space-lg);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-description {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 54ch;
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+  }
+
+  @media (min-width: 640px) {
+    .hero {
+      min-height: 620px;
+    }
+    .hero--compact {
+      min-height: 320px;
+    }
+  }
+</style>

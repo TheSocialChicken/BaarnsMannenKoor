@@ -1,0 +1,308 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout
+  title="Home"
+  description="Baarns MannenKoor — een mannenkooor met hart en ziel, opgericht in 1907 in Baarn. Welkom op onze website."
+  activePage="home"
+>
+  <Hero
+    title="Baarns MannenKoor"
+    subtitle="Baarn · Opgericht 1907"
+    description="Zingen met hart en ziel sinds 1907. Een gemeenschap van mannen die muziek serieus nemen — en er samen plezier in hebben."
+    ctaPrimary={{ label: "Word lid", href: "/membership" }}
+    ctaSecondary={{ label: "Neem contact op", href: "/contact" }}
+  />
+
+  <!-- Intro -->
+  <section class="section" aria-labelledby="intro-heading">
+    <div class="container">
+      <div class="intro-layout">
+        <div class="intro-text">
+          <div class="section-header">
+            <h2 id="intro-heading">Een koor met diepgewortelde traditie</h2>
+            <hr class="divider" />
+          </div>
+          <p>
+            Het Baarns MannenKoor is een van de oudste actieve mannenkoren van Nederland.
+            Al meer dan 115 jaar klinkt onze stem in Baarn en ver daarbuiten. Wij zingen
+            een breed repertoire — van klassieke koormuziek tot volksliederen en spirituals —
+            met een uitgesproken liefde voor het ambacht.
+          </p>
+          <p>
+            Onder leiding van dirigent <strong>Mark Walter</strong> (sinds 2017) groeide
+            het koor zowel muzikaal als in samenhang. Elke repetitie is een avond van
+            concentratie, plezier en kameraadschap. Notenlezen is géén vereiste om mee te
+            doen — alleen enthousiasme en een goede mannenstem.
+          </p>
+          <p>
+            Wij repeteren elke <strong>maandag van 19:45 tot 22:00 uur</strong> in
+            Gebouw De Pool aan de Dahliastraat 18 in Baarn. Nieuwe leden zijn altijd
+            van harte welkom.
+          </p>
+          <div class="intro-actions">
+            <a href="/membership" class="btn btn--primary">Meer over lid worden</a>
+            <a href="/history" class="btn btn--outline-dark">Onze geschiedenis</a>
+          </div>
+        </div>
+
+        <aside class="intro-aside" aria-label="Snel overzicht">
+          <div class="fact-block">
+            <div class="fact-number">1907</div>
+            <div class="fact-label">Opgericht in Baarn</div>
+          </div>
+          <div class="fact-block">
+            <div class="fact-number">115+</div>
+            <div class="fact-label">Jaar muzikale traditie</div>
+          </div>
+          <div class="fact-block">
+            <div class="fact-number">Mnd</div>
+            <div class="fact-label">Wekelijkse repetitie</div>
+          </div>
+          <div class="fact-block">
+            <div class="fact-number">&#9835;</div>
+            <div class="fact-label">Notenlezen niet vereist</div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repetitie info -->
+  <section class="section section--alt" aria-labelledby="rehearsal-heading">
+    <div class="container">
+      <div class="section-header section-header--centered">
+        <h2 id="rehearsal-heading">Kom een avond meeluisteren</h2>
+        <hr class="divider divider--center" />
+        <p>
+          Wil je weten wat het Baarns MannenKoor te bieden heeft? Je bent altijd
+          welkom om een repetitie bij te wonen — geheel vrijblijvend.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <Card title="Wanneer" variant="accent">
+          <p>Elke maandagavond van <strong>19:45 tot 22:00 uur</strong>.</p>
+          <p>Het hele seizoen door, van september tot en met juni.</p>
+        </Card>
+
+        <Card title="Waar" variant="accent">
+          <p><strong>Gebouw De Pool</strong></p>
+          <p>Dahliastraat 18<br />3741 GL Baarn</p>
+        </Card>
+
+        <Card title="Wie" variant="accent">
+          <p>Elke man met een goede stem is welkom.</p>
+          <p>Notenlezen is géén vereiste — enthousiasme wel.</p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nieuws / Hoogtepunten -->
+  <section class="section" aria-labelledby="news-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="news-heading">Nieuws &amp; hoogtepunten</h2>
+        <hr class="divider" />
+      </div>
+
+      <div class="grid-2">
+        <article class="news-item">
+          <div class="news-meta">Seizoen 2024–2025</div>
+          <h3 class="news-title">Nieuw seizoen van start</h3>
+          <p>
+            Het nieuwe koorsezoen is in volle gang. Onder leiding van Mark Walter
+            werken we aan een gevarieerd programma met werken van Brahms, traditionele
+            Nederlandse liederen en enkele verrassende nieuwkomers in ons repertoire.
+          </p>
+        </article>
+
+        <article class="news-item">
+          <div class="news-meta">Aankomend concert</div>
+          <h3 class="news-title">Kijk onze website voor concertdata</h3>
+          <p>
+            Wij geven jaarlijks meerdere concerten in de regio Baarn en omgeving.
+            Houd onze website in de gaten voor de nieuwste data en locaties, of
+            neem contact op voor actuele informatie.
+          </p>
+          <a href="/contact" class="news-link">Contact opnemen &rarr;</a>
+        </article>
+
+        <article class="news-item">
+          <div class="news-meta">Nieuw lid worden</div>
+          <h3 class="news-title">We zoeken nieuwe stemmen</h3>
+          <p>
+            Het koor verwelkomt altijd nieuwe leden. Of je nu tenor, bariton of
+            bas bent — er is een plek voor jou. Kom gerust een avond proefzingen.
+          </p>
+          <a href="/membership" class="news-link">Meer over lid worden &rarr;</a>
+        </article>
+
+        <article class="news-item">
+          <div class="news-meta">Vrienden van het koor</div>
+          <h3 class="news-title">Steun ons als Vriend</h3>
+          <p>
+            Hou je van koormuziek maar wil je niet zelf zingen? Word dan Vriend
+            van het Baarns MannenKoor en help ons onze muzikale ambities te
+            verwezenlijken.
+          </p>
+          <a href="/friends" class="news-link">Word een Vriend &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA banner -->
+  <section class="cta-banner section--dark" aria-labelledby="cta-heading">
+    <div class="container cta-inner">
+      <div>
+        <h2 id="cta-heading">Klaar om mee te zingen?</h2>
+        <p>Een repetitie bijwonen is de beste manier om te ervaren wat het koor te bieden heeft.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="/membership" class="btn btn--primary">Lid worden</a>
+        <a href="/contact" class="btn btn--outline">Stel een vraag</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Intro section */
+  .intro-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  @media (min-width: 860px) {
+    .intro-layout {
+      grid-template-columns: 1fr 280px;
+    }
+  }
+
+  .intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  /* Fact blocks aside */
+  .intro-aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .fact-block {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .fact-number {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-accent-light);
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+  }
+
+  .fact-label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    line-height: 1.4;
+  }
+
+  /* News items */
+  .news-item {
+    padding: var(--space-xl);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .news-meta {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    margin-bottom: var(--space-sm);
+  }
+
+  .news-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .news-item p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .news-link {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent-dark);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .news-link:hover {
+    color: var(--color-primary);
+  }
+
+  /* CTA Banner */
+  .cta-banner {
+    padding-block: var(--space-3xl);
+    background-color: var(--color-primary);
+  }
+
+  .cta-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  .cta-banner h2 {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-banner p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 760px) {
+    .cta-inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+</style>

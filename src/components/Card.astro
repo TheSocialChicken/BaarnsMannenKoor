@@ -1,0 +1,78 @@
+---
+export interface Props {
+  title: string;
+  icon?: string;
+  variant?: "default" | "accent" | "outlined";
+  href?: string;
+}
+
+const { title, icon, variant = "default", href } = Astro.props;
+const Tag = href ? "a" : "div";
+---
+
+<Tag
+  class={`card card--${variant}${href ? " card--link" : ""}`}
+  href={href}
+>
+  {icon && <div class="card-icon" aria-hidden="true">{icon}</div>}
+  <h3 class="card-title">{title}</h3>
+  <div class="card-body">
+    <slot />
+  </div>
+</Tag>
+
+<style>
+  .card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .card--link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .card--link:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    color: inherit;
+  }
+
+  .card--accent {
+    border-top: 4px solid var(--color-accent);
+  }
+
+  .card--outlined {
+    background-color: transparent;
+    border: 2px solid var(--color-border);
+    box-shadow: none;
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+    line-height: 1;
+  }
+
+  .card-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .card-body {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .card-body :global(p + p) {
+    margin-top: var(--space-sm);
+  }
+</style>

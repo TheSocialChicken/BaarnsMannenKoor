@@ -1,0 +1,392 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<Layout
+  title="Contact"
+  description="Neem contact op met het Baarns MannenKoor. Gebouw De Pool, Dahliastraat 18, Baarn. Repetities elke maandag van 19:45 tot 22:00 uur."
+  activePage="contact"
+>
+  <Hero
+    title="Neem contact op"
+    subtitle="Contact"
+    description="Vragen, aanmeldingen of gewoon een berichtje — we horen graag van u."
+    compact={true}
+  />
+
+  <!-- Contact layout -->
+  <section class="section" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact form -->
+        <div class="contact-form-area">
+          <h2 id="contact-heading">Stuur ons een bericht</h2>
+          <hr class="divider" />
+          <p class="form-intro">
+            Vul het formulier in en wij nemen zo snel mogelijk contact met u op.
+          </p>
+
+          <form
+            class="contact-form"
+            method="post"
+            action="#"
+            novalidate
+            aria-label="Contactformulier"
+          >
+            <div class="form-group">
+              <label for="name" class="form-label">
+                Naam <span class="required" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                required
+                autocomplete="name"
+                placeholder="Uw volledige naam"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">
+                E-mailadres <span class="required" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                required
+                autocomplete="email"
+                placeholder="uw@emailadres.nl"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Onderwerp</label>
+              <select id="subject" name="subject" class="form-input">
+                <option value="">Kies een onderwerp…</option>
+                <option value="lid-worden">Lid worden</option>
+                <option value="vrienden">Vrienden van het koor</option>
+                <option value="concert">Concert of optreden</option>
+                <option value="pers">Pers of media</option>
+                <option value="overig">Overig</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">
+                Bericht <span class="required" aria-hidden="true">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-input form-textarea"
+                required
+                rows="6"
+                placeholder="Schrijf hier uw bericht…"
+              ></textarea>
+            </div>
+
+            <div class="form-notice" role="note">
+              <span aria-hidden="true">&#9432;</span>
+              Wij nemen zo snel mogelijk contact met u op. Dit formulier is
+              momenteel voor weergavedoeleinden; voor direct contact kunt u
+              ons ook bereiken via de gegevens hiernaast.
+            </div>
+
+            <button type="submit" class="btn btn--primary form-submit">
+              Verstuur bericht
+            </button>
+
+            <p class="required-note">
+              <span class="required" aria-hidden="true">*</span> Verplichte velden
+            </p>
+          </form>
+        </div>
+
+        <!-- Contact info -->
+        <aside class="contact-info" aria-label="Contactgegevens">
+          <div class="info-section">
+            <h3>Adres</h3>
+            <address>
+              <strong>Gebouw De Pool</strong><br />
+              Dahliastraat 18<br />
+              3741 GL Baarn<br />
+              Nederland
+            </address>
+          </div>
+
+          <div class="info-section">
+            <h3>Repetities</h3>
+            <p>
+              <strong>Elke maandag</strong><br />
+              19:45 – 22:00 uur
+            </p>
+            <p>
+              Seizoen: september – juni<br />
+              (geen repetitie in schoolvakanties)
+            </p>
+          </div>
+
+          <div class="info-section">
+            <h3>Direct langskomen?</h3>
+            <p>
+              U bent van harte welkom om een maandagavond langs te komen bij
+              Gebouw De Pool. We staan open voor belangstellenden en nieuwe
+              leden.
+            </p>
+          </div>
+
+          <div class="info-section">
+            <h3>Dirigent</h3>
+            <p>
+              Mark Walter<br />
+              <span class="info-since">Dirigent sinds 2017</span>
+            </p>
+          </div>
+
+          <div class="info-route">
+            <h3>Route</h3>
+            <p>
+              Gebouw De Pool ligt in een rustige woonwijk in Baarn, goed
+              bereikbaar per auto en fiets. Parkeren is gratis mogelijk
+              in de omliggende straten.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Map placeholder -->
+  <section class="section section--alt" aria-labelledby="map-heading">
+    <div class="container">
+      <div class="section-header section-header--centered">
+        <h2 id="map-heading">Hoe u ons vindt</h2>
+        <hr class="divider divider--center" />
+      </div>
+      <div class="map-placeholder" role="img" aria-label="Kaartweergave van Gebouw De Pool (kaart volgt)">
+        <div class="map-placeholder-inner">
+          <span class="map-icon" aria-hidden="true">&#9679;</span>
+          <p class="map-address"><strong>Gebouw De Pool</strong></p>
+          <p>Dahliastraat 18, 3741 GL Baarn</p>
+          <a
+            href="https://maps.google.com/?q=Dahliastraat+18+Baarn"
+            class="btn btn--outline-dark"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Bekijk Dahliastraat 18 Baarn in Google Maps (opent in nieuw tabblad)"
+          >
+            Bekijk in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Contact layout */
+  .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  @media (min-width: 860px) {
+    .contact-layout {
+      grid-template-columns: 1fr 300px;
+    }
+  }
+
+  /* Form */
+  .form-intro {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .required {
+    color: var(--color-accent-dark);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--color-text);
+    background-color: var(--color-white);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    line-height: 1.5;
+    appearance: none;
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 42, 74, 0.12);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  select.form-input {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6560' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.9rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+
+  .form-notice {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    padding: var(--space-md) var(--space-lg);
+    font-size: 0.87rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    display: flex;
+    gap: var(--space-sm);
+    align-items: flex-start;
+  }
+
+  .form-submit {
+    align-self: flex-start;
+  }
+
+  .required-note {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin: 0;
+  }
+
+  /* Contact info aside */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .info-section {
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .info-section:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .info-section h3 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    margin-bottom: var(--space-sm);
+  }
+
+  .info-section address {
+    font-style: normal;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+  }
+
+  .info-section p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .info-section p + p {
+    margin-top: var(--space-sm);
+  }
+
+  .info-since {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+  }
+
+  .info-route h3 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    margin-bottom: var(--space-sm);
+  }
+
+  .info-route p {
+    font-size: 0.93rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  /* Map placeholder */
+  .map-placeholder {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-lg);
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-primary-light);
+  }
+
+  .map-placeholder-inner {
+    text-align: center;
+    padding: var(--space-xl);
+  }
+
+  .map-icon {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--color-accent-light);
+    margin-bottom: var(--space-md);
+  }
+
+  .map-address {
+    color: var(--color-white);
+    font-size: 1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .map-placeholder-inner > p:not(.map-address) {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-xl);
+  }
+</style>

@@ -1,0 +1,371 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout
+  title="Vrienden"
+  description="Word Vriend van het Baarns MannenKoor en steun meer dan 115 jaar muzikale traditie in Baarn."
+  activePage="friends"
+>
+  <Hero
+    title="Vrienden van het koor"
+    subtitle="Vriendenprogramma"
+    description="Hou je van koormuziek maar wil je niet zingen? Word Vriend en draag bij aan een levende muzikale traditie."
+    ctaPrimary={{ label: "Word een Vriend", href: "/contact" }}
+    compact={true}
+  />
+
+  <!-- Intro -->
+  <section class="section" aria-labelledby="friends-intro-heading">
+    <div class="container">
+      <div class="intro-layout">
+        <div class="intro-text">
+          <h2 id="friends-intro-heading">Wat zijn de Vrienden van het koor?</h2>
+          <hr class="divider" />
+          <p>
+            Het Baarns MannenKoor bestaat al meer dan 115 jaar dankzij de inzet van
+            zijn leden — maar ook dankzij de betrokkenheid van mensen die het koor
+            een warm hart toedragen zonder zelf te zingen. Dat zijn onze Vrienden.
+          </p>
+          <p>
+            Als Vriend van het koor steun je een levende muzikale traditie die al
+            meer dan een eeuw midden in de Baarnse gemeenschap staat. Je helpt het
+            koor om concerten te organiseren, nieuwe zangers te werven en de
+            kwaliteit van het ensemble hoog te houden.
+          </p>
+          <p>
+            In ruil daarvoor nodigen we je uit bij onze concerten, houden we je
+            op de hoogte van ons reilen en zeilen, en ben je welkom bij speciale
+            bijeenkomsten voor Vrienden. Want een koor zonder publiek en vrienden
+            is een koor zonder ziel.
+          </p>
+        </div>
+
+        <div class="intro-visual" aria-hidden="true">
+          <div class="friends-emblem">
+            <div class="emblem-inner">
+              <span class="emblem-icon">&#9835;</span>
+              <span class="emblem-text">Vrienden van het</span>
+              <span class="emblem-name">Baarns MannenKoor</span>
+              <span class="emblem-year">Sinds 1907</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voordelen -->
+  <section class="section section--alt" aria-labelledby="benefits-heading">
+    <div class="container">
+      <div class="section-header section-header--centered">
+        <h2 id="benefits-heading">Voordelen voor Vrienden</h2>
+        <hr class="divider divider--center" />
+        <p>Als Vriend maak je deel uit van de kring rondom een bijzonder koor.</p>
+      </div>
+
+      <div class="grid-3">
+        <Card title="Uitnodigingen voor concerten" variant="accent">
+          <p>
+            Als Vriend word je persoonlijk uitgenodigd voor al onze concerten.
+            Je ontvangt de programma's van het seizoen ruim van tevoren.
+          </p>
+        </Card>
+
+        <Card title="Nieuwsbrief" variant="accent">
+          <p>
+            Ontvang onze periodieke nieuwsbrief met nieuws over het koor,
+            aankomende concerten en achtergronden bij het repertoire.
+          </p>
+        </Card>
+
+        <Card title="Speciale Vriendenmiddag" variant="accent">
+          <p>
+            Elk jaar organiseren we een bijeenkomst speciaal voor onze Vrienden —
+            met een informeel optreden, een rondleiding en goed gezelschap.
+          </p>
+        </Card>
+
+        <Card title="Naamsvermelding" variant="accent">
+          <p>
+            Vrienden worden vermeld in onze concertprogrammaboekjes als teken
+            van onze waardering voor hun steun.
+          </p>
+        </Card>
+
+        <Card title="Achter de schermen" variant="accent">
+          <p>
+            Interesse in hoe een koor van binnenuit werkt? Vrienden zijn welkom
+            om een repetitie bij te wonen en kennis te maken met de zangers
+            en dirigent.
+          </p>
+        </Card>
+
+        <Card title="Goed gevoel" variant="accent">
+          <p>
+            U steunt iets moois: een gemeenschap van mensen die samen muziek
+            maken en daarin groeien. Dat heeft waarde die verder gaat dan een
+            concertkaartje.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bijdrage & aanmelden -->
+  <section class="section" aria-labelledby="contribute-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="contribute-heading">Hoe word je Vriend?</h2>
+        <hr class="divider" />
+      </div>
+
+      <div class="contribute-layout">
+        <div class="contribute-text">
+          <p>
+            Vriendschap van het Baarns MannenKoor staat open voor iedereen die
+            het koor een warm hart toedraagt. Er is een jaarlijkse vrijwillige
+            bijdrage; het exacte bedrag stemt u af met het bestuur.
+          </p>
+          <p>
+            Wij zijn een kleine organisatie zonder grote bureaucratie. U neemt
+            contact op, we maken kennis, en als het klikt bent u Vriend. Zo
+            eenvoudig is het.
+          </p>
+
+          <h3>Bedrijven en organisaties</h3>
+          <p>
+            Ook bedrijven kunnen Vriend worden van het Baarns MannenKoor. Als
+            zakelijk Vriend steunt u lokale cultuur en ontvangt u naamsbekendheid
+            via onze concertprogramma's en communicatiekanalen. Neem contact op
+            voor de mogelijkheden.
+          </p>
+
+          <div class="contribute-cta">
+            <a href="/contact" class="btn btn--primary">Neem contact op</a>
+            <a href="/contact" class="btn btn--outline-dark">Stuur een e-mail</a>
+          </div>
+        </div>
+
+        <aside class="contribute-aside">
+          <div class="aside-info">
+            <h3>Meer informatie</h3>
+            <p>
+              Heeft u vragen over het Vriendenprogramma? Neem gerust contact
+              op met ons bestuur. We beantwoorden uw vragen graag.
+            </p>
+            <ul class="aside-details">
+              <li>
+                <strong>Locatie:</strong><br />
+                Gebouw De Pool<br />
+                Dahliastraat 18, Baarn
+              </li>
+              <li>
+                <strong>Repetities:</strong><br />
+                Elke maandag, 19:45 – 22:00
+              </li>
+            </ul>
+            <a href="/contact" class="aside-link">Contact &rarr;</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="section section--dark" aria-labelledby="friends-quote-heading">
+    <div class="container">
+      <h2 id="friends-quote-heading" class="sr-only">Wat Vrienden zeggen</h2>
+      <div class="friends-quote">
+        <blockquote>
+          <p>
+            "Ik ben al jaren Vriend van het koor en ik geniet nog steeds van
+            elk concert. Het is mooi om te zien hoe een groep gewone mannen
+            samen iets buitengewoons maakt."
+          </p>
+          <cite>— Vriend van het koor</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Intro layout */
+  .intro-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  @media (min-width: 860px) {
+    .intro-layout {
+      grid-template-columns: 1fr 260px;
+      align-items: center;
+    }
+  }
+
+  /* Emblem visual */
+  .friends-emblem {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-accent);
+  }
+
+  .emblem-inner {
+    text-align: center;
+    padding: var(--space-lg);
+  }
+
+  .emblem-icon {
+    display: block;
+    font-size: 3rem;
+    color: var(--color-accent-light);
+    margin-bottom: var(--space-lg);
+  }
+
+  .emblem-text {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: var(--space-xs);
+  }
+
+  .emblem-name {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+  }
+
+  .emblem-year {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-accent-light);
+    letter-spacing: 0.1em;
+  }
+
+  /* Contribute layout */
+  .contribute-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  @media (min-width: 760px) {
+    .contribute-layout {
+      grid-template-columns: 1fr 280px;
+    }
+  }
+
+  .contribute-text h3 {
+    font-size: 1.15rem;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .contribute-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  /* Aside */
+  .aside-info {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .aside-info h3 {
+    font-size: 1.05rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .aside-info > p {
+    color: var(--color-text-muted);
+    font-size: 0.93rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .aside-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .aside-details li {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .aside-details strong {
+    color: var(--color-primary);
+  }
+
+  .aside-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-accent-dark);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .aside-link:hover {
+    color: var(--color-primary);
+  }
+
+  /* Quote section */
+  .friends-quote {
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .friends-quote blockquote {
+    margin: 0;
+  }
+
+  .friends-quote p {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.6;
+    margin: 0 0 var(--space-lg);
+  }
+
+  .friends-quote cite {
+    font-size: 0.9rem;
+    color: var(--color-accent-light);
+    font-style: normal;
+  }
+
+  /* Screen reader only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

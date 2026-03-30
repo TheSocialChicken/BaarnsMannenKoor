@@ -1,0 +1,349 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<Layout
+  title="Media"
+  description="Persberichten, opnames en optredens van het Baarns MannenKoor."
+  activePage="media"
+>
+  <Hero
+    title="Media &amp; Pers"
+    subtitle="Optredens · Opnames · Persberichten"
+    description="Luister naar ons koor, lees over onze optredens en ontdek ons in de media."
+    compact={true}
+  />
+
+  <!-- Opnames -->
+  <section class="section" aria-labelledby="recordings-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="recordings-heading">Opnames</h2>
+        <hr class="divider" />
+        <p>
+          Hieronder vindt u opnames van concerten en repetities van het
+          Baarns MannenKoor. Meer opnames worden binnenkort toegevoegd.
+        </p>
+      </div>
+
+      <div class="recordings-grid">
+        <article class="recording-item">
+          <div class="recording-thumb" aria-hidden="true">
+            <span class="recording-icon">&#9835;</span>
+          </div>
+          <div class="recording-info">
+            <div class="recording-tag">Kerstconcert</div>
+            <h3 class="recording-title">Kerstconcert 2023</h3>
+            <p class="recording-desc">
+              Een selectie uit ons jaarlijkse kerstconcert — traditionele
+              kerstliederen en klassiek koorwerk, live opgenomen in Baarn.
+            </p>
+            <p class="recording-placeholder">
+              <em>Audio-speler wordt binnenkort toegevoegd.</em>
+            </p>
+          </div>
+        </article>
+
+        <article class="recording-item">
+          <div class="recording-thumb" aria-hidden="true">
+            <span class="recording-icon">&#9835;</span>
+          </div>
+          <div class="recording-info">
+            <div class="recording-tag">Voorjaarsconcert</div>
+            <h3 class="recording-title">Voorjaarsconcert 2023</h3>
+            <p class="recording-desc">
+              Hoogtepunten van ons voorjaarsprogramma met werken van Brahms,
+              een Engelse folksong-medley en een Nederlandse première.
+            </p>
+            <p class="recording-placeholder">
+              <em>Audio-speler wordt binnenkort toegevoegd.</em>
+            </p>
+          </div>
+        </article>
+
+        <article class="recording-item">
+          <div class="recording-thumb" aria-hidden="true">
+            <span class="recording-icon">&#9835;</span>
+          </div>
+          <div class="recording-info">
+            <div class="recording-tag">Jubileumconcert</div>
+            <h3 class="recording-title">115 jaar — Jubileumconcert 2022</h3>
+            <p class="recording-desc">
+              Een bijzonder programma samengesteld ter gelegenheid van het
+              115-jarig bestaan van het koor. Met gastoptredens en werken uit
+              verschillende periodes van de koorsgeschiedenis.
+            </p>
+            <p class="recording-placeholder">
+              <em>Audio-speler wordt binnenkort toegevoegd.</em>
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pers & media -->
+  <section class="section section--alt" aria-labelledby="press-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="press-heading">In de pers</h2>
+        <hr class="divider" />
+        <p>
+          Het Baarns MannenKoor verschijnt regelmatig in regionale media.
+          Hieronder een overzicht van recente berichten.
+        </p>
+      </div>
+
+      <div class="press-list">
+        <article class="press-item">
+          <div class="press-source">BN De Stem / Gooi en Eemlander</div>
+          <h3 class="press-title">Baarns MannenKoor viert 115-jarig bestaan met groots concert</h3>
+          <p class="press-date">2022</p>
+          <p class="press-excerpt">
+            "Het Baarns MannenKoor liet vrijdagavond horen waarom het al meer dan
+            een eeuw standhoudt. Met een programma dat de gehele koorsgeschiedenis
+            omspande, brachten de zangers een ontroerend eerbetoon aan 115 jaar
+            muzikale traditie."
+          </p>
+        </article>
+
+        <article class="press-item">
+          <div class="press-source">Baarnse Courant</div>
+          <h3 class="press-title">Kerstconcert mannenkoor trekt volle zaal</h3>
+          <p class="press-date">December 2023</p>
+          <p class="press-excerpt">
+            "De kerk zat tot de nok toe vol toen het Baarns MannenKoor zijn
+            jaarlijkse kerstconcert gaf. Dirigent Mark Walter leidde het koor
+            door een gevarieerd programma dat eindigde met een staande ovatie."
+          </p>
+        </article>
+
+        <article class="press-item">
+          <div class="press-source">RTV Eem</div>
+          <h3 class="press-title">Mannenkoor zoekt nieuwe zangers: 'Notenlezen niet nodig'</h3>
+          <p class="press-date">2023</p>
+          <p class="press-excerpt">
+            "Het Baarns MannenKoor opent zijn deuren voor nieuwe leden. Dirigent
+            Walter benadrukt dat notenlezen geen vereiste is: 'We leren iedereen
+            het vak. Wat je meebrengt is een goede stem en enthousiasme.'"
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optredens -->
+  <section class="section" aria-labelledby="performances-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="performances-heading">Aankomende optredens</h2>
+        <hr class="divider" />
+        <p>
+          Houd deze pagina in de gaten voor aankomende concerten en optredens.
+          Of neem contact op voor de meest actuele informatie.
+        </p>
+      </div>
+
+      <div class="performances-placeholder">
+        <div class="placeholder-box">
+          <span class="placeholder-icon" aria-hidden="true">&#127925;</span>
+          <h3>Concertagenda</h3>
+          <p>
+            De concertagenda wordt binnenkort bijgewerkt met data voor het
+            seizoen 2025–2026. Wilt u op de hoogte blijven? Neem contact met
+            ons op en wij houden u geïnformeerd.
+          </p>
+          <a href="/contact" class="btn btn--outline-dark">Contact opnemen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pers contact -->
+  <section class="section--dark section" aria-labelledby="press-contact-heading">
+    <div class="container">
+      <div class="press-contact-row">
+        <div>
+          <h2 id="press-contact-heading">Perscontact</h2>
+          <p>
+            Bent u journalist of mediamaker met interesse in het Baarns MannenKoor?
+            Wij staan open voor interviews, reportages en samenwerking.
+          </p>
+        </div>
+        <a href="/contact" class="btn btn--primary">Neem contact op</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Recordings */
+  .recordings-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .recording-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  @media (min-width: 640px) {
+    .recording-item {
+      grid-template-columns: 100px 1fr;
+    }
+  }
+
+  .recording-thumb {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-md);
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .recording-icon {
+    font-size: 1.8rem;
+    color: var(--color-accent-light);
+  }
+
+  .recording-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    margin-bottom: var(--space-xs);
+  }
+
+  .recording-title {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .recording-desc {
+    color: var(--color-text-muted);
+    font-size: 0.93rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .recording-placeholder {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    margin: 0;
+  }
+
+  /* Press */
+  .press-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .press-item {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    border-left: 4px solid var(--color-accent);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .press-source {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-xs);
+  }
+
+  .press-title {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .press-date {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+  }
+
+  .press-excerpt {
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  /* Performances placeholder */
+  .performances-placeholder {
+    display: flex;
+    justify-content: center;
+  }
+
+  .placeholder-box {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-xl);
+    background-color: var(--color-white);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .placeholder-icon {
+    display: block;
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+    opacity: 0.5;
+  }
+
+  .placeholder-box h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .placeholder-box p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-xl);
+    max-width: 45ch;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Press contact row */
+  .press-contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  .press-contact-row h2 {
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+  }
+
+  .press-contact-row p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+  }
+
+  @media (min-width: 760px) {
+    .press-contact-row {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+</style>
