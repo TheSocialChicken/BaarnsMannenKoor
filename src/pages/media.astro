@@ -30,15 +30,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
       <div class="recordings-grid">
         <article class="recording-item">
-          <div class="recording-thumb" aria-hidden="true">
-            <span class="recording-icon">&#9835;</span>
+          <div class="recording-thumb">
+            <img
+              src={`${base}/images/concert-poster-kerstkoor.jpg`}
+              alt="Concertposter: Geef Vrede een Kans — Kerstconcert Baarns MannenKoor"
+              class="recording-img"
+            />
           </div>
           <div class="recording-info">
             <div class="recording-tag">Kerstconcert</div>
-            <h3 class="recording-title">Kerstconcert 2023</h3>
+            <h3 class="recording-title">Geef Vrede een Kans</h3>
             <p class="recording-desc">
-              Een selectie uit ons jaarlijkse kerstconcert — traditionele
-              kerstliederen en klassiek koorwerk, live opgenomen in Baarn.
+              Kerstconcert samen met het KinderKerstKoor. Een ontroerend programma
+              van kerstliederen en klassiek koorwerk, live in de Paaskerk te Baarn.
             </p>
             <p class="recording-placeholder">
               <em>Audio-speler wordt binnenkort toegevoegd.</em>
@@ -47,15 +51,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         </article>
 
         <article class="recording-item">
-          <div class="recording-thumb" aria-hidden="true">
-            <span class="recording-icon">&#9835;</span>
+          <div class="recording-thumb">
+            <img
+              src={`${base}/images/concert-poster-all-you-need-is-love.jpg`}
+              alt="Concertposter: All You Need is Love — Baarns MannenKoor"
+              class="recording-img"
+            />
           </div>
           <div class="recording-info">
-            <div class="recording-tag">Voorjaarsconcert</div>
-            <h3 class="recording-title">Voorjaarsconcert 2023</h3>
+            <div class="recording-tag">Najaarsconcert</div>
+            <h3 class="recording-title">All You Need is Love</h3>
             <p class="recording-desc">
-              Hoogtepunten van ons voorjaarsprogramma met werken van Brahms,
-              een Engelse folksong-medley en een Nederlandse première.
+              Een bijzonder concert o.l.v. dirigent Mark Walter, met medewerking
+              van het Vredenhofensemble en Bachschool Baarn. Live in de Paaskerk te Baarn.
             </p>
             <p class="recording-placeholder">
               <em>Audio-speler wordt binnenkort toegevoegd.</em>
@@ -64,16 +72,19 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         </article>
 
         <article class="recording-item">
-          <div class="recording-thumb" aria-hidden="true">
-            <span class="recording-icon">&#9835;</span>
+          <div class="recording-thumb">
+            <img
+              src={`${base}/images/concert-poster-tram.jpg`}
+              alt="Concertposter: Baarns MannenKoor optredens op de Vorstelijk Baarn Express"
+              class="recording-img"
+            />
           </div>
           <div class="recording-info">
-            <div class="recording-tag">Jubileumconcert</div>
-            <h3 class="recording-title">115 jaar — Jubileumconcert 2022</h3>
+            <div class="recording-tag">Buiten optreden</div>
+            <h3 class="recording-title">Vorstelijk Baarn Express</h3>
             <p class="recording-desc">
-              Een bijzonder programma samengesteld ter gelegenheid van het
-              115-jarig bestaan van het koor. Met gastoptredens en werken uit
-              verschillende periodes van de koorsgeschiedenis.
+              Het koor trad op langs de Laanstraat en de Brink — met de Vorstelijk
+              Baarn Express worden winkelende Baarnaren verrast met live koorzang.
             </p>
             <p class="recording-placeholder">
               <em>Audio-speler wordt binnenkort toegevoegd.</em>
@@ -204,17 +215,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   }
 
   .recording-thumb {
-    background-color: var(--color-primary);
     border-radius: var(--radius-md);
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    flex-shrink: 0;
+    width: 100px;
   }
 
-  .recording-icon {
-    font-size: 1.8rem;
-    color: var(--color-accent-light);
+  .recording-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   .recording-tag {

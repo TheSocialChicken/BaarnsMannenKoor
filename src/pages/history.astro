@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout
@@ -44,6 +45,11 @@ import Hero from "../components/Hero.astro";
             <div class="aside-year">1907</div>
             <p>Oprichting van het Baarns MannenKoor in Baarn, Noord-Holland.</p>
           </div>
+          <img
+            src={`${base}/images/choir-banner.png`}
+            alt="Het vaandel van het Baarns MannenKoor, opgericht 1907"
+            class="history-banner-img"
+          />
         </aside>
       </div>
     </div>
@@ -71,6 +77,11 @@ import Hero from "../components/Hero.astro";
               vinden plaats in een lokale zaal. Het koor kiest voor een breed
               repertoire van klassieke koormuziek en volksliederen.
             </p>
+            <img
+              src={`${base}/images/history-1907-group.jpg`}
+              alt="Vroege groepsfoto van het Baarns MannenKoor, circa 1907"
+              class="timeline-photo"
+            />
           </div>
         </li>
 
@@ -100,6 +111,11 @@ import Hero from "../components/Hero.astro";
               Het ledenaantal groeit. Het koor treedt op in de wijde omgeving van
               Baarn en bouwt een naam op als een koor van kwaliteit en betrouwbaarheid.
             </p>
+            <img
+              src={`${base}/images/history-mid-group.jpg`}
+              alt="Groepsfoto van het koor in de jaren dertig"
+              class="timeline-photo"
+            />
           </div>
         </li>
 
@@ -356,6 +372,22 @@ import Hero from "../components/Hero.astro";
     font-size: 0.95rem;
     max-width: 65ch;
     margin: 0;
+  }
+
+  .history-banner-img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--space-md);
+  }
+
+  .timeline-photo {
+    margin-top: var(--space-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    max-width: 320px;
+    width: 100%;
+    filter: grayscale(20%);
   }
 
   /* Pull quote */

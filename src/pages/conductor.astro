@@ -46,14 +46,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           </p>
         </div>
 
-        <div class="conductor-photo-area" aria-label="Fotoplaats dirigent">
-          <div class="photo-placeholder" role="img" aria-label="Foto van Mark Walter (nog te plaatsen)">
-            <div class="photo-placeholder-inner">
-              <span class="photo-icon" aria-hidden="true">&#9835;</span>
-              <span class="photo-caption">Mark Walter</span>
-              <span class="photo-note">Foto volgt</span>
-            </div>
-          </div>
+        <div class="conductor-photo-area">
+          <img
+            src={`${base}/images/conductor-mark-walter.png`}
+            alt="Mark Walter, dirigent van het Baarns MannenKoor"
+            class="conductor-photo"
+            width="280"
+          />
         </div>
       </div>
     </div>
@@ -193,42 +192,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     margin-top: var(--space-xs);
   }
 
-  /* Photo placeholder */
-  .photo-placeholder {
-    background-color: var(--color-primary);
+  .conductor-photo {
+    width: 100%;
     border-radius: var(--radius-lg);
-    aspect-ratio: 3/4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--color-primary-light);
-  }
-
-  .photo-placeholder-inner {
-    text-align: center;
-    padding: var(--space-lg);
-  }
-
-  .photo-icon {
+    box-shadow: var(--shadow-lg);
     display: block;
-    font-size: 3rem;
-    color: var(--color-accent-light);
-    margin-bottom: var(--space-md);
-  }
-
-  .photo-caption {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    color: var(--color-white);
-    margin-bottom: var(--space-xs);
-  }
-
-  .photo-note {
-    display: block;
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.45);
-    font-style: italic;
   }
 
   /* Philosophy grid */
