@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Card from "../components/Card.astro";
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout
@@ -45,8 +45,8 @@ const base = import.meta.env.BASE_URL;
             van harte welkom.
           </p>
           <div class="intro-actions">
-            <a href={`${base}membership`} class="btn btn--primary">Meer over lid worden</a>
-            <a href={`${base}history`} class="btn btn--outline-dark">Onze geschiedenis</a>
+            <a href={`${base}/membership`} class="btn btn--primary">Meer over lid worden</a>
+            <a href={`${base}/history`} class="btn btn--outline-dark">Onze geschiedenis</a>
           </div>
         </div>
 
@@ -130,7 +130,7 @@ const base = import.meta.env.BASE_URL;
             Houd onze website in de gaten voor de nieuwste data en locaties, of
             neem contact op voor actuele informatie.
           </p>
-          <a href={`${base}contact`} class="news-link">Contact opnemen &rarr;</a>
+          <a href={`${base}/contact`} class="news-link">Contact opnemen &rarr;</a>
         </article>
 
         <article class="news-item">
@@ -140,7 +140,7 @@ const base = import.meta.env.BASE_URL;
             Het koor verwelkomt altijd nieuwe leden. Of je nu tenor, bariton of
             bas bent — er is een plek voor jou. Kom gerust een avond proefzingen.
           </p>
-          <a href={`${base}membership`} class="news-link">Meer over lid worden &rarr;</a>
+          <a href={`${base}/membership`} class="news-link">Meer over lid worden &rarr;</a>
         </article>
 
         <article class="news-item">
@@ -151,7 +151,7 @@ const base = import.meta.env.BASE_URL;
             van het Baarns MannenKoor en help ons onze muzikale ambities te
             verwezenlijken.
           </p>
-          <a href={`${base}friends`} class="news-link">Word een Vriend &rarr;</a>
+          <a href={`${base}/friends`} class="news-link">Word een Vriend &rarr;</a>
         </article>
       </div>
     </div>
@@ -165,8 +165,8 @@ const base = import.meta.env.BASE_URL;
         <p>Een repetitie bijwonen is de beste manier om te ervaren wat het koor te bieden heeft.</p>
       </div>
       <div class="cta-buttons">
-        <a href={`${base}membership`} class="btn btn--primary">Lid worden</a>
-        <a href={`${base}contact`} class="btn btn--outline">Stel een vraag</a>
+        <a href={`${base}/membership`} class="btn btn--primary">Lid worden</a>
+        <a href={`${base}/contact`} class="btn btn--outline">Stel een vraag</a>
       </div>
     </div>
   </section>

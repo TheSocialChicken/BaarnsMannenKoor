@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Card from "../components/Card.astro";
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout
@@ -115,7 +115,7 @@ const base = import.meta.env.BASE_URL;
           <div class="step-content">
             <h3>Neem contact op</h3>
             <p>
-              Stuur ons een bericht via het <a href={`${base}contact`}>contactformulier</a>
+              Stuur ons een bericht via het <a href={`${base}/contact`}>contactformulier</a>
               of kom gewoon op een maandagavond langs bij Gebouw De Pool. We praten
               je graag bij over het koor.
             </p>
@@ -208,8 +208,8 @@ const base = import.meta.env.BASE_URL;
           De volgende maandagavond kan al jouw eerste repetitie zijn.
         </p>
         <div class="join-cta-actions">
-          <a href={`${base}contact`} class="btn btn--primary">Neem contact op</a>
-          <a href={`${base}conductor`} class="btn btn--outline">Onze dirigent</a>
+          <a href={`${base}/contact`} class="btn btn--primary">Neem contact op</a>
+          <a href={`${base}/conductor`} class="btn btn--outline">Onze dirigent</a>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout
@@ -155,7 +155,7 @@ const base = import.meta.env.BASE_URL;
             seizoen 2025–2026. Wilt u op de hoogte blijven? Neem contact met
             ons op en wij houden u geïnformeerd.
           </p>
-          <a href={`${base}contact`} class="btn btn--outline-dark">Contact opnemen</a>
+          <a href={`${base}/contact`} class="btn btn--outline-dark">Contact opnemen</a>
         </div>
       </div>
     </div>
@@ -172,7 +172,7 @@ const base = import.meta.env.BASE_URL;
             Wij staan open voor interviews, reportages en samenwerking.
           </p>
         </div>
-        <a href={`${base}contact`} class="btn btn--primary">Neem contact op</a>
+        <a href={`${base}/contact`} class="btn btn--primary">Neem contact op</a>
       </div>
     </div>
   </section>

@@ -11,15 +11,15 @@ const {
   activePage = "",
 } = Astro.props;
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const navLinks = [
-  { href: base, label: "Home", key: "home" },
-  { href: `${base}history`, label: "Geschiedenis", key: "history" },
-  { href: `${base}conductor`, label: "Dirigent", key: "conductor" },
-  { href: `${base}media`, label: "Media", key: "media" },
-  { href: `${base}membership`, label: "Lid worden", key: "membership" },
-  { href: `${base}friends`, label: "Vrienden", key: "friends" },
-  { href: `${base}contact`, label: "Contact", key: "contact" },
+  { href: `${base}/`, label: "Home", key: "home" },
+  { href: `${base}/history`, label: "Geschiedenis", key: "history" },
+  { href: `${base}/conductor`, label: "Dirigent", key: "conductor" },
+  { href: `${base}/media`, label: "Media", key: "media" },
+  { href: `${base}/membership`, label: "Lid worden", key: "membership" },
+  { href: `${base}/friends`, label: "Vrienden", key: "friends" },
+  { href: `${base}/contact`, label: "Contact", key: "contact" },
 ];
 ---
 
@@ -36,7 +36,7 @@ const navLinks = [
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <a href={base} class="site-logo" aria-label="Baarns MannenKoor — terug naar home">
+        <a href={`${base}/`} class="site-logo" aria-label="Baarns MannenKoor — terug naar home">
           <span class="logo-title">Baarns MannenKoor</span>
           <span class="logo-sub">Opgericht 1907 &middot; Baarn</span>
         </a>
