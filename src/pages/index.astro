@@ -23,6 +23,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <div class="container">
       <div class="intro-layout">
         <div class="intro-text">
+          <div class="intro-photo-wrap">
+            <img
+              src={`${base}/images/8782@2x.jpg`}
+              alt="Baarns MannenKoor tijdens een optreden"
+              class="intro-choir-photo"
+            />
+          </div>
           <div class="section-header">
             <h2 id="intro-heading">Een koor met diepgewortelde traditie</h2>
             <hr class="divider" />
@@ -185,6 +192,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     .intro-layout {
       grid-template-columns: 1fr 280px;
     }
+  }
+
+  .intro-photo-wrap {
+    margin-bottom: var(--space-xl);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .intro-choir-photo {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
   }
 
   .intro-actions {

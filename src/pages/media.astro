@@ -95,8 +95,51 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </div>
   </section>
 
+  <!-- Fotogalerij -->
+  <section class="section section--alt" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="gallery-heading">Fotogalerij</h2>
+        <hr class="divider" />
+        <p>Foto's van concerten en optredens van het Baarns MannenKoor.</p>
+      </div>
+
+      <div class="photo-gallery">
+        <img src={`${base}/images/8797@2x.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8794@2x.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8799@2x.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8801@2x.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8802@2x.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8795@2x.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6707.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6708.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6709.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6710.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6711.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6712.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6713.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8547.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8548.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8549.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8550.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8551.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8552.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6721.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6722.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6723.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6724.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6725.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/6726.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8560.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8563.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8564.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
+        <img src={`${base}/images/8565.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
   <!-- Pers & media -->
-  <section class="section section--alt" aria-labelledby="press-heading">
+  <section class="section" aria-labelledby="press-heading">
     <div class="container">
       <div class="section-header">
         <h2 id="press-heading">In de pers</h2>
@@ -190,6 +233,39 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 </Layout>
 
 <style>
+  /* Gallery */
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  @media (min-width: 480px) {
+    .photo-gallery {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 860px) {
+    .photo-gallery {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .gallery-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .gallery-photo:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
+  }
+
   /* Recordings */
   .recordings-grid {
     display: flex;
