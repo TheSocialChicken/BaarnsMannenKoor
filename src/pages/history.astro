@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 <Layout
   title="Geschiedenis"
-  description="Meer dan 115 jaar Baarns MannenKoor — lees over de rijke geschiedenis van een van de oudste mannenkoren van Nederland."
+  description="Meer dan 115 jaar Baarns MannenKoor. Lees over de rijke geschiedenis van een van de oudste mannenkoren van Nederland."
   activePage="history"
 >
   <Hero
@@ -36,7 +36,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             lid geweest, hebben meegezongen bij herdenkingen, kerkdiensten en concerten,
             en hebben hun stem gegeven aan een gemeenschap die altijd meer was dan alleen
             muziek. Het koor overleefde twee wereldoorlogen, decennia van maatschappelijke
-            verandering en de teloorgang van menig koor om zich heen — en staat er sterker
+            verandering en de teloorgang van menig koor om zich heen, en staat er sterker
             voor dan ooit.
           </p>
         </div>
@@ -78,11 +78,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               vinden plaats in een lokale zaal. Het koor kiest voor een breed
               repertoire van klassieke koormuziek en volksliederen.
             </p>
-            <img
-              src={`${base}/images/history-1907-group.jpg`}
-              alt="Vroege groepsfoto van het Baarns MannenKoor, circa 1907"
-              class="timeline-photo"
-            />
+            <div class="timeline-photos">
+              <img
+                src={`${base}/images/history-founder-portrait.jpg`}
+                alt="Portret van een van de oprichters van het Baarns MannenKoor, 1907"
+                class="timeline-photo"
+              />
+              <img
+                src={`${base}/images/history-1907-group.jpg`}
+                alt="Vroege groepsfoto van het Baarns MannenKoor, circa 1907"
+                class="timeline-photo"
+              />
+            </div>
           </div>
         </li>
 
@@ -112,11 +119,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               Het ledenaantal groeit. Het koor treedt op in de wijde omgeving van
               Baarn en bouwt een naam op als een koor van kwaliteit en betrouwbaarheid.
             </p>
-            <img
-              src={`${base}/images/history-mid-group.jpg`}
-              alt="Groepsfoto van het koor in de jaren dertig"
-              class="timeline-photo"
-            />
+            <div class="timeline-photos">
+              <img
+                src={`${base}/images/history-mid-group.jpg`}
+                alt="Groepsfoto van het koor in de jaren dertig"
+                class="timeline-photo"
+              />
+              <img
+                src={`${base}/images/history-early-group.jpg`}
+                alt="Vroege groepsfoto van het Baarns MannenKoor"
+                class="timeline-photo"
+              />
+            </div>
           </div>
         </li>
 
@@ -130,7 +144,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             <p>
               De oorlog treft Baarn zwaar. Toch weet het koor de draad vast te
               houden. Na de bevrijding in 1945 zingt het koor mee bij de
-              bevrijdingsfeesten — een onvergetelijk moment in de koorsgeschiedenis.
+              bevrijdingsfeesten, een onvergetelijk moment in de koorsgeschiedenis.
             </p>
           </div>
         </li>
@@ -209,6 +223,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               repetities, jaarlijkse concerten en een warme gemeenschap van
               leden kijkt het koor met vertrouwen naar de toekomst.
             </p>
+            <img
+              src={`${base}/images/8794@2x.jpg`}
+              alt="Baarns MannenKoor op het podium, recent optreden"
+              class="timeline-photo"
+            />
           </div>
         </li>
       </ol>
@@ -226,7 +245,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             Wat het Baarns MannenKoor bijzonder maakt, is niet alleen de muziek
             maar de gemeenschap eromheen. Generaties Baarnse mannen hebben in dit
             koor vriendschappen gesloten die een leven lang duurden. Collega's,
-            buren, vaders en zonen — ze zongen allemaal naast elkaar.
+            buren, vaders en zonen; ze zongen allemaal naast elkaar.
           </p>
           <p>
             Dat gemeenschapsgevoel is tot op de dag van vandaag voelbaar. Een
@@ -247,7 +266,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             "Zingen in een koor is meer dan noten lezen. Het is luisteren, voelen,
             en je stem geven aan iets groters dan jezelf."
           </p>
-          <cite>— Een lid van het Baarns MannenKoor</cite>
+          <cite>Een lid van het Baarns MannenKoor</cite>
         </blockquote>
       </div>
     </div>
@@ -380,6 +399,18 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
     margin-top: var(--space-md);
+  }
+
+  .timeline-photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .timeline-photos .timeline-photo {
+    margin-top: 0;
+    max-width: 220px;
   }
 
   .timeline-photo {
