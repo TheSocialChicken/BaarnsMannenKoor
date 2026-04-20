@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <Layout
@@ -11,7 +12,8 @@ import Hero from "../components/Hero.astro";
   <Hero
     title="Neem contact op"
     subtitle="Contact"
-    description="Vragen, aanmeldingen of gewoon een berichtje — we horen graag van u."
+    description="Vragen, aanmeldingen of gewoon een berichtje. We horen graag van u."
+    backgroundImage={`${base}/images/8782@2x.jpg`}
     compact={true}
   />
 
