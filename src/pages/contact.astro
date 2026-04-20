@@ -26,6 +26,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         <div class="contact-form-area">
           <h2 id="contact-heading">Stuur ons een bericht</h2>
           <hr class="divider" />
+
+          <div id="form-thanks" class="form-thanks" hidden>
+            <p>Bedankt voor uw bericht! Wij nemen zo snel mogelijk contact met u op.</p>
+          </div>
+
           <p class="form-intro">
             Vul het formulier in en wij nemen zo snel mogelijk contact met u op.
           </p>
@@ -33,10 +38,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           <form
             class="contact-form"
             method="post"
-            action="#"
-            novalidate
+            action="https://formsubmit.co/info@baarnsmannenkoor.nl"
             aria-label="Contactformulier"
           >
+            <!-- Formsubmit.co config -->
+            <input type="hidden" name="_subject" value="Nieuw bericht via baarnsmannenkoor.nl" />
+            <input type="hidden" name="_next" value="https://thesocialchicken.github.io/BaarnsMannenKoor/contact?bedankt=1" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" />
+
             <div class="form-group">
               <label for="name" class="form-label">
                 Naam <span class="required" aria-hidden="true">*</span>
@@ -91,13 +101,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
                 rows="6"
                 placeholder="Schrijf hier uw bericht…"
               ></textarea>
-            </div>
-
-            <div class="form-notice" role="note">
-              <span aria-hidden="true">&#9432;</span>
-              Wij nemen zo snel mogelijk contact met u op. Dit formulier is
-              momenteel voor weergavedoeleinden; voor direct contact kunt u
-              ons ook bereiken via de gegevens hiernaast.
             </div>
 
             <button type="submit" class="btn btn--primary form-submit">
@@ -205,7 +208,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   </section>
 </Layout>
 
+<script>
+  if (new URLSearchParams(window.location.search).get('bedankt') === '1') {
+    const thanks = document.getElementById('form-thanks');
+    const form = document.querySelector('.contact-form');
+    if (thanks) thanks.hidden = false;
+    if (form) (form as HTMLElement).style.display = 'none';
+  }
+</script>
+
 <style>
+  .form-thanks {
+    background-color: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-left: 4px solid #4caf50;
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    color: #2e7d32;
+    font-size: 1rem;
+  }
+
   /* Contact layout */
   .contact-layout {
     display: grid;
