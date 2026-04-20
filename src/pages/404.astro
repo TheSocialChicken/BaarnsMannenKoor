@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<Layout title="Pagina niet gevonden" description="Deze pagina bestaat niet.">
+  <section class="not-found section" aria-labelledby="not-found-heading">
+    <div class="container not-found-inner">
+      <div class="not-found-code" aria-hidden="true">404</div>
+      <h1 id="not-found-heading">Pagina niet gevonden</h1>
+      <p>
+        De pagina die u zoekt bestaat niet of is verplaatst.
+        Ga terug naar de homepage of gebruik de navigatie.
+      </p>
+      <div class="not-found-actions">
+        <a href={`${base}/`} class="btn btn--primary">Terug naar home</a>
+        <a href={`${base}/contact`} class="btn btn--outline-dark">Contact opnemen</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .not-found-inner {
+    text-align: center;
+    padding-block: var(--space-4xl);
+  }
+
+  .not-found-code {
+    font-family: var(--font-heading);
+    font-size: clamp(5rem, 20vw, 10rem);
+    font-weight: bold;
+    color: var(--color-accent);
+    line-height: 1;
+    opacity: 0.35;
+    margin-bottom: var(--space-lg);
+    letter-spacing: -0.04em;
+  }
+
+  .not-found-inner h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: var(--space-lg);
+  }
+
+  .not-found-inner p {
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    max-width: 46ch;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .not-found-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+  }
+</style>
