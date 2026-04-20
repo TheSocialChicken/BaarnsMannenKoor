@@ -14,6 +14,7 @@ const {
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const navLinks = [
   { href: `${base}/`, label: "Home", key: "home" },
+  { href: `${base}/events`, label: "Concerten", key: "events" },
   { href: `${base}/history`, label: "Geschiedenis", key: "history" },
   { href: `${base}/conductor`, label: "Dirigent", key: "conductor" },
   { href: `${base}/media`, label: "Media", key: "media" },
@@ -31,6 +32,50 @@ const navLinks = [
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <title>{title} | Baarns MannenKoor</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} | Baarns MannenKoor`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://thesocialchicken.github.io/BaarnsMannenKoor/images/8782@2x.jpg" />
+    <meta property="og:image:alt" content="Baarns MannenKoor tijdens concert" />
+    <meta property="og:site_name" content="Baarns MannenKoor" />
+    <meta property="og:locale" content="nl_NL" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | Baarns MannenKoor`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://thesocialchicken.github.io/BaarnsMannenKoor/images/8782@2x.jpg" />
+
+    <!-- Structured data: LocalBusiness / ChoirGroup -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": ["PerformingGroup", "Organization"],
+      "name": "Baarns MannenKoor",
+      "description": "Mannenkoor opgericht in 1907 in Baarn, Nederland. Wekelijkse repetities onder leiding van dirigent Mark Walter.",
+      "url": "https://thesocialchicken.github.io/BaarnsMannenKoor/",
+      "foundingDate": "1907",
+      "location": {
+        "@type": "Place",
+        "name": "Gebouw De Pool",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dahliastraat 18",
+          "postalCode": "3741 GL",
+          "addressLocality": "Baarn",
+          "addressCountry": "NL"
+        }
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@baarnsmannenkoor.nl",
+        "telephone": "+31623665984",
+        "contactType": "customer support"
+      },
+      "image": "https://thesocialchicken.github.io/BaarnsMannenKoor/images/8782@2x.jpg"
+    })} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
   </head>
   <body>

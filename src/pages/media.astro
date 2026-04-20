@@ -2,153 +2,235 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+/*
+  VIDEO CAROUSEL — add real YouTube video IDs below.
+  Format: { id: "YOUTUBE_VIDEO_ID", title: "Concert titel", year: "2024" }
+  Leave the array empty or with placeholders if no videos yet.
+*/
+const videos = [
+  // { id: "dQw4w9WgXcQ", title: "Kerstconcert 2024", year: "2024" },
+  // { id: "EXAMPLE_ID2", title: "All You Need is Love", year: "2023" },
+];
+
+const galleryPhotos = [
+  { src: "8797@2x.jpg", alt: "Baarns MannenKoor concert" },
+  { src: "8794@2x.jpg", alt: "Baarns MannenKoor optreden" },
+  { src: "8799@2x.jpg", alt: "Baarns MannenKoor concert" },
+  { src: "8801@2x.jpg", alt: "Baarns MannenKoor optreden" },
+  { src: "8802@2x.jpg", alt: "Baarns MannenKoor concert" },
+  { src: "8795@2x.jpg", alt: "Baarns MannenKoor optreden" },
+  { src: "6707.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "6708.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "6709.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "6710.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "6711.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "6712.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "6713.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "8547.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "8548.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "8549.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "8550.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "8551.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "8552.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "6721.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "6722.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "6723.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "6724.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "8560.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "8563.jpg",    alt: "Baarns MannenKoor optreden" },
+  { src: "8564.jpg",    alt: "Baarns MannenKoor concert"  },
+  { src: "8565.jpg",    alt: "Baarns MannenKoor optreden" },
+];
 ---
 
 <Layout
   title="Media"
-  description="Persberichten, opnames en optredens van het Baarns MannenKoor."
+  description="Video's, foto's, opnames en persberichten van het Baarns MannenKoor."
   activePage="media"
 >
   <Hero
     title="Media &amp; Pers"
-    subtitle="Optredens · Opnames · Persberichten"
-    description="Luister naar ons koor, lees over onze optredens en ontdek ons in de media."
+    subtitle="Video · Foto · Audio · Pers"
+    description="Ontdek het Baarns MannenKoor in beeld en geluid."
     backgroundImage={`${base}/images/8782@2x.jpg`}
     compact={true}
   />
 
-  <!-- Opnames -->
-  <section class="section" aria-labelledby="recordings-heading">
+  <!-- ═══════════════════════════════════════ VIDEO CAROUSEL -->
+  <section class="section" aria-labelledby="video-heading">
     <div class="container">
       <div class="section-header">
-        <h2 id="recordings-heading">Opnames</h2>
+        <h2 id="video-heading">Video's</h2>
         <hr class="divider" />
-        <p>
-          Hieronder vindt u opnames van concerten en repetities van het
-          Baarns MannenKoor. Meer opnames worden binnenkort toegevoegd.
-        </p>
       </div>
 
-      <div class="recordings-grid">
-        <article class="recording-item">
-          <div class="recording-thumb">
-            <img
-              src={`${base}/images/concert-poster-kerstkoor.jpg`}
-              alt="Concertposter: Geef Vrede een Kans, Kerstconcert Baarns MannenKoor"
-              class="recording-img"
-            />
+      {videos.length > 0 ? (
+        <div class="video-carousel" role="region" aria-label="Videogalerij">
+          <div class="video-track" id="video-track">
+            {videos.map((v, i) => (
+              <div class="video-slide" id={`slide-${i}`}>
+                <div class="video-embed-wrap">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${v.id}?rel=0`}
+                    title={v.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"
+                  ></iframe>
+                </div>
+                <p class="video-caption">{v.title} <span class="video-year">({v.year})</span></p>
+              </div>
+            ))}
           </div>
-          <div class="recording-info">
-            <div class="recording-tag">Kerstconcert</div>
-            <h3 class="recording-title">Geef Vrede een Kans</h3>
-            <p class="recording-desc">
-              Kerstconcert samen met het KinderKerstKoor. Een ontroerend programma
-              van kerstliederen en klassiek koorwerk, live in de Paaskerk te Baarn.
-            </p>
-            <p class="recording-placeholder">
-              <em>Audio-speler wordt binnenkort toegevoegd.</em>
-            </p>
-          </div>
-        </article>
 
-        <article class="recording-item">
-          <div class="recording-thumb">
-            <img
-              src={`${base}/images/concert-poster-all-you-need-is-love.jpg`}
-              alt="Concertposter: All You Need is Love, Baarns MannenKoor"
-              class="recording-img"
-            />
-          </div>
-          <div class="recording-info">
-            <div class="recording-tag">Najaarsconcert</div>
-            <h3 class="recording-title">All You Need is Love</h3>
-            <p class="recording-desc">
-              Een bijzonder concert o.l.v. dirigent Mark Walter, met medewerking
-              van het Vredenhofensemble en Bachschool Baarn. Live in de Paaskerk te Baarn.
-            </p>
-            <p class="recording-placeholder">
-              <em>Audio-speler wordt binnenkort toegevoegd.</em>
-            </p>
-          </div>
-        </article>
+          {videos.length > 1 && (
+            <div class="carousel-controls">
+              <button class="carousel-btn" id="prev-btn" aria-label="Vorige video">&#8592;</button>
+              <div class="carousel-dots" id="carousel-dots">
+                {videos.map((_, i) => (
+                  <button class={`dot ${i === 0 ? 'dot--active' : ''}`} data-index={i} aria-label={`Video ${i + 1}`}></button>
+                ))}
+              </div>
+              <button class="carousel-btn" id="next-btn" aria-label="Volgende video">&#8594;</button>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div class="video-placeholder">
+          <span class="video-placeholder-icon" aria-hidden="true">&#9654;</span>
+          <h3>Video's binnenkort beschikbaar</h3>
+          <p>
+            Wij voegen binnenkort opnames van onze concerten toe.
+            Volg ons voor updates.
+          </p>
+          <a href={`${base}/contact`} class="btn btn--outline-dark">Neem contact op</a>
+        </div>
+      )}
+    </div>
+  </section>
 
-        <article class="recording-item">
-          <div class="recording-thumb">
-            <img
-              src={`${base}/images/concert-poster-tram.jpg`}
-              alt="Concertposter: Baarns MannenKoor optredens op de Vorstelijk Baarn Express"
-              class="recording-img"
-            />
+  <!-- ═══════════════════════════════════════ AUDIO -->
+  <section class="section section--alt" aria-labelledby="audio-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="audio-heading">Luisterfragmenten</h2>
+        <hr class="divider" />
+        <p>Beluister fragmenten van ons koor.</p>
+      </div>
+
+      <div class="audio-list">
+        <div class="audio-item">
+          <div class="audio-meta">
+            <span class="audio-tag">Bas-partij</span>
+            <h3 class="audio-title">Du, du liegst mir im Herzen</h3>
+            <p class="audio-desc">Basoefening, Nr. 304</p>
           </div>
-          <div class="recording-info">
-            <div class="recording-tag">Buiten optreden</div>
-            <h3 class="recording-title">Vorstelijk Baarn Express</h3>
-            <p class="recording-desc">
-              Het koor trad op langs de Laanstraat en de Brink, met de Vorstelijk
-              Baarn Express worden winkelende Baarnaren verrast met live koorzang.
-            </p>
-            <p class="recording-placeholder">
-              <em>Audio-speler wordt binnenkort toegevoegd.</em>
-            </p>
-          </div>
-        </article>
+          <audio controls class="audio-player" preload="none">
+            <source src={`${base}/images/Du,%20liegst%20mir%20im%20Herzen%20-%20bas.m4a`} type="audio/mp4" />
+            Uw browser ondersteunt geen audio-element.
+          </audio>
+        </div>
+
+        <!-- Add more <div class="audio-item"> blocks here for additional recordings -->
       </div>
     </div>
   </section>
 
-  <!-- Fotogalerij -->
-  <section class="section section--alt" aria-labelledby="gallery-heading">
+  <!-- ═══════════════════════════════════════ PHOTO GALLERY (lightbox) -->
+  <section class="section" aria-labelledby="gallery-heading">
     <div class="container">
       <div class="section-header">
         <h2 id="gallery-heading">Fotogalerij</h2>
         <hr class="divider" />
-        <p>Foto's van concerten en optredens van het Baarns MannenKoor.</p>
+        <p>Klik op een foto voor een grotere weergave.</p>
       </div>
 
-      <div class="photo-gallery">
-        <img src={`${base}/images/8797@2x.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8794@2x.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8799@2x.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8801@2x.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8802@2x.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8795@2x.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6707.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6708.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6709.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6710.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6711.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6712.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6713.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8547.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8548.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8549.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8550.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8551.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8552.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6721.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6722.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6723.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6724.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6725.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/6726.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8560.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8563.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8564.jpg`} alt="Baarns MannenKoor concert" class="gallery-photo" loading="lazy" />
-        <img src={`${base}/images/8565.jpg`} alt="Baarns MannenKoor optreden" class="gallery-photo" loading="lazy" />
+      <div class="photo-gallery" role="list">
+        {galleryPhotos.map((photo, i) => (
+          <button
+            class="gallery-btn"
+            data-src={`${base}/images/${photo.src}`}
+            data-alt={photo.alt}
+            data-index={i}
+            aria-label={`${photo.alt}, foto ${i + 1} van ${galleryPhotos.length} vergroot bekijken`}
+            role="listitem"
+          >
+            <img
+              src={`${base}/images/${photo.src}`}
+              alt={photo.alt}
+              class="gallery-photo"
+              loading="lazy"
+              decoding="async"
+            />
+          </button>
+        ))}
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="lightbox" hidden aria-modal="true" role="dialog" aria-label="Foto vergroot">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Sluiten">&#10005;</button>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Vorige foto">&#8592;</button>
+        <button class="lightbox-next" id="lightbox-next" aria-label="Volgende foto">&#8594;</button>
+        <div class="lightbox-inner">
+          <img id="lightbox-img" src="" alt="" class="lightbox-photo" />
+          <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Pers & media -->
+  <!-- ═══════════════════════════════════════ DOWNLOADS -->
+  <section class="section section--alt" aria-labelledby="downloads-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="downloads-heading">Downloads</h2>
+        <hr class="divider" />
+        <p>Bladmuziek, flyers en andere documenten.</p>
+      </div>
+
+      <div class="downloads-list">
+        <a
+          href={`${base}/images/WERVINGSFLYERPROJECTKOOR2026.pdf`}
+          class="download-item"
+          download
+          target="_blank"
+          rel="noopener"
+          aria-label="Download wervingsflyer Projectkoor 2026 als PDF"
+        >
+          <span class="download-icon" aria-hidden="true">&#128196;</span>
+          <div class="download-info">
+            <span class="download-name">Wervingsflyer Projectkoor 2026</span>
+            <span class="download-type">PDF</span>
+          </div>
+          <span class="download-arrow" aria-hidden="true">&#8595;</span>
+        </a>
+
+        <a
+          href={`${base}/images/Nr,304%20Du,%20du%20liegst%20mir%20im%20Herzen.pdf`}
+          class="download-item"
+          download
+          target="_blank"
+          rel="noopener"
+          aria-label="Download bladmuziek Nr. 304 Du du liegst mir im Herzen als PDF"
+        >
+          <span class="download-icon" aria-hidden="true">&#127926;</span>
+          <div class="download-info">
+            <span class="download-name">Nr. 304 — Du, du liegst mir im Herzen</span>
+            <span class="download-type">Bladmuziek · PDF</span>
+          </div>
+          <span class="download-arrow" aria-hidden="true">&#8595;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PRESS -->
   <section class="section" aria-labelledby="press-heading">
     <div class="container">
       <div class="section-header">
         <h2 id="press-heading">In de pers</h2>
         <hr class="divider" />
-        <p>
-          Het Baarns MannenKoor verschijnt regelmatig in regionale media.
-          Hieronder een overzicht van recente berichten.
-        </p>
       </div>
 
       <div class="press-list">
@@ -189,150 +271,413 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </div>
   </section>
 
-  <!-- Optredens -->
-  <section class="section" aria-labelledby="performances-heading">
-    <div class="container">
-      <div class="section-header">
-        <h2 id="performances-heading">Aankomende optredens</h2>
-        <hr class="divider" />
-        <p>
-          Houd deze pagina in de gaten voor aankomende concerten en optredens.
-          Of neem contact op voor de meest actuele informatie.
-        </p>
-      </div>
-
-      <div class="performances-placeholder">
-        <div class="placeholder-box">
-          <span class="placeholder-icon" aria-hidden="true">&#127925;</span>
-          <h3>Concertagenda</h3>
-          <p>
-            De concertagenda wordt binnenkort bijgewerkt met data voor het
-            seizoen 2025–2026. Wilt u op de hoogte blijven? Neem contact met
-            ons op en wij houden u geïnformeerd.
-          </p>
-          <a href={`${base}/contact`} class="btn btn--outline-dark">Contact opnemen</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pers contact -->
+  <!-- Press contact -->
   <section class="section--dark section" aria-labelledby="press-contact-heading">
-    <div class="container">
-      <div class="press-contact-row">
-        <div>
-          <h2 id="press-contact-heading">Perscontact</h2>
-          <p>
-            Bent u journalist of mediamaker met interesse in het Baarns MannenKoor?
-            Wij staan open voor interviews, reportages en samenwerking.
-          </p>
-        </div>
-        <a href={`${base}/contact`} class="btn btn--primary">Neem contact op</a>
+    <div class="container press-contact-row">
+      <div>
+        <h2 id="press-contact-heading">Perscontact</h2>
+        <p>Journalist of mediamaker? Wij staan open voor interviews en samenwerking.</p>
       </div>
+      <a href={`${base}/contact`} class="btn btn--primary">Neem contact op</a>
     </div>
   </section>
 </Layout>
 
+<script>
+  // ── VIDEO CAROUSEL ──────────────────────────────────────────
+  const track = document.getElementById('video-track');
+  const dots = document.querySelectorAll<HTMLButtonElement>('.dot');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+
+  if (track && dots.length > 0) {
+    let current = 0;
+
+    function goTo(index: number) {
+      current = (index + dots.length) % dots.length;
+      (track as HTMLElement).style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('dot--active', i === current));
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+  }
+
+  // ── LIGHTBOX ────────────────────────────────────────────────
+  const lightbox = document.getElementById('lightbox') as HTMLElement | null;
+  const lbImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const lbCaption = document.getElementById('lightbox-caption');
+  const lbClose = document.getElementById('lightbox-close');
+  const lbPrev = document.getElementById('lightbox-prev');
+  const lbNext = document.getElementById('lightbox-next');
+  const galleryBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('.gallery-btn'));
+
+  let lbIndex = 0;
+
+  function openLightbox(index: number) {
+    lbIndex = index;
+    const btn = galleryBtns[lbIndex];
+    if (lbImg) {
+      lbImg.src = btn.dataset.src || '';
+      lbImg.alt = btn.dataset.alt || '';
+    }
+    if (lbCaption) lbCaption.textContent = btn.dataset.alt || '';
+    if (lightbox) {
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+      lbClose?.focus();
+    }
+  }
+
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.hidden = true;
+      document.body.style.overflow = '';
+      galleryBtns[lbIndex]?.focus();
+    }
+  }
+
+  function shiftLightbox(dir: number) {
+    openLightbox((lbIndex + dir + galleryBtns.length) % galleryBtns.length);
+  }
+
+  galleryBtns.forEach((btn, i) => btn.addEventListener('click', () => openLightbox(i)));
+  lbClose?.addEventListener('click', closeLightbox);
+  lbPrev?.addEventListener('click', () => shiftLightbox(-1));
+  lbNext?.addEventListener('click', () => shiftLightbox(1));
+
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox || lightbox.hidden) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') shiftLightbox(-1);
+    if (e.key === 'ArrowRight') shiftLightbox(1);
+  });
+</script>
+
 <style>
-  /* Gallery */
+  /* ── VIDEO CAROUSEL ── */
+  .video-carousel {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .video-track-wrap {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+  }
+
+  .video-track {
+    display: flex;
+    transition: transform 0.35s ease;
+  }
+
+  .video-slide {
+    flex: 0 0 100%;
+  }
+
+  .video-embed-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: #000;
+  }
+
+  .video-embed-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .video-caption {
+    text-align: center;
+    margin-top: var(--space-md);
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+  }
+
+  .video-year { opacity: 0.7; }
+
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+  }
+
+  .carousel-btn {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition);
+  }
+
+  .carousel-btn:hover { background: var(--color-primary-light); }
+
+  .carousel-dots { display: flex; gap: var(--space-sm); }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-border);
+    cursor: pointer;
+    padding: 0;
+    transition: background var(--transition);
+  }
+
+  .dot--active { background: var(--color-accent); }
+
+  .video-placeholder {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-xl);
+    background: var(--color-white);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .video-placeholder-icon {
+    display: block;
+    font-size: 3rem;
+    color: var(--color-accent);
+    opacity: 0.5;
+    margin-bottom: var(--space-lg);
+  }
+
+  .video-placeholder h3 { margin-bottom: var(--space-sm); }
+  .video-placeholder p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-xl);
+    max-width: 40ch;
+    margin-inline: auto;
+  }
+
+  /* ── AUDIO ── */
+  .audio-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .audio-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+    align-items: center;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .audio-meta { flex: 1; min-width: 200px; }
+
+  .audio-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    display: block;
+    margin-bottom: var(--space-xs);
+  }
+
+  .audio-title {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-xs);
+  }
+
+  .audio-desc {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .audio-player {
+    width: 100%;
+    max-width: 420px;
+    accent-color: var(--color-accent);
+  }
+
+  /* ── GALLERY + LIGHTBOX ── */
   .photo-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-sm);
   }
 
-  @media (min-width: 480px) {
-    .photo-gallery {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
+  @media (min-width: 480px) { .photo-gallery { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 860px) { .photo-gallery { grid-template-columns: repeat(4, 1fr); } }
 
-  @media (min-width: 860px) {
-    .photo-gallery {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  .gallery-btn {
+    border: none;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: block;
   }
 
   .gallery-photo {
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
-    border-radius: var(--radius-md);
     display: block;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
-  .gallery-photo:hover {
-    transform: scale(1.03);
-    box-shadow: var(--shadow-md);
+  .gallery-btn:hover .gallery-photo,
+  .gallery-btn:focus-visible .gallery-photo {
+    transform: scale(1.04);
+    opacity: 0.88;
   }
 
-  /* Recordings */
-  .recordings-grid {
+  .gallery-btn:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(5, 10, 20, 0.93);
     display: flex;
-    flex-direction: column;
-    gap: var(--space-xl);
-  }
-
-  .recording-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: var(--space-lg);
-    align-items: start;
-    background-color: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
+    align-items: center;
+    justify-content: center;
     padding: var(--space-xl);
   }
 
-  @media (min-width: 640px) {
-    .recording-item {
-      grid-template-columns: 100px 1fr;
-    }
+  .lightbox[hidden] { display: none; }
+
+  .lightbox-inner {
+    max-width: 90vw;
+    max-height: 90vh;
+    text-align: center;
   }
 
-  .recording-thumb {
+  .lightbox-photo {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
     border-radius: var(--radius-md);
-    overflow: hidden;
-    aspect-ratio: 3/4;
-    flex-shrink: 0;
-    width: 100px;
+    box-shadow: var(--shadow-lg);
   }
 
-  .recording-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .lightbox-caption {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.9rem;
+    margin-top: var(--space-md);
   }
 
-  .recording-tag {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-accent-dark);
-    margin-bottom: var(--space-xs);
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next {
+    position: fixed;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    z-index: 1001;
   }
 
-  .recording-title {
-    font-size: 1.1rem;
-    margin-bottom: var(--space-sm);
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover { background: rgba(255,255,255,0.25); }
+
+  .lightbox-close { top: 1.25rem; right: 1.25rem; }
+  .lightbox-prev  { left: 1rem;  top: 50%; transform: translateY(-50%); }
+  .lightbox-next  { right: 1rem; top: 50%; transform: translateY(-50%); }
+
+  /* ── DOWNLOADS ── */
+  .downloads-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 640px;
   }
 
-  .recording-desc {
+  .download-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-lg) var(--space-xl);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: box-shadow var(--transition), border-color var(--transition);
+  }
+
+  .download-item:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+    color: var(--color-text);
+  }
+
+  .download-icon { font-size: 1.8rem; flex-shrink: 0; }
+
+  .download-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .download-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--color-primary);
+  }
+
+  .download-type {
+    font-size: 0.78rem;
     color: var(--color-text-muted);
-    font-size: 0.93rem;
-    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
-  .recording-placeholder {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    margin: 0;
+  .download-arrow {
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
   }
 
-  /* Press */
+  /* ── PRESS ── */
   .press-list {
     display: flex;
     flex-direction: column;
@@ -340,7 +685,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   }
 
   .press-item {
-    background-color: var(--color-white);
+    background: var(--color-white);
     border-radius: var(--radius-lg);
     padding: var(--space-xl);
     border-left: 4px solid var(--color-accent);
@@ -356,62 +701,11 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     margin-bottom: var(--space-xs);
   }
 
-  .press-title {
-    font-size: 1.1rem;
-    margin-bottom: var(--space-xs);
-  }
+  .press-title { font-size: 1.1rem; margin-bottom: var(--space-xs); }
+  .press-date { font-size: 0.82rem; color: var(--color-text-light); margin-bottom: var(--space-md); }
+  .press-excerpt { font-style: italic; color: var(--color-text-muted); font-size: 0.95rem; margin: 0; line-height: 1.7; }
 
-  .press-date {
-    font-size: 0.82rem;
-    color: var(--color-text-light);
-    margin-bottom: var(--space-md);
-  }
-
-  .press-excerpt {
-    font-style: italic;
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    margin: 0;
-    line-height: 1.7;
-  }
-
-  /* Performances placeholder */
-  .performances-placeholder {
-    display: flex;
-    justify-content: center;
-  }
-
-  .placeholder-box {
-    text-align: center;
-    padding: var(--space-3xl) var(--space-xl);
-    background-color: var(--color-white);
-    border: 2px dashed var(--color-border);
-    border-radius: var(--radius-lg);
-    max-width: 520px;
-    width: 100%;
-  }
-
-  .placeholder-icon {
-    display: block;
-    font-size: 2.5rem;
-    margin-bottom: var(--space-md);
-    opacity: 0.5;
-  }
-
-  .placeholder-box h3 {
-    margin-bottom: var(--space-sm);
-  }
-
-  .placeholder-box p {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    margin-bottom: var(--space-xl);
-    max-width: 45ch;
-    margin-inline: auto;
-    margin-bottom: var(--space-xl);
-  }
-
-  /* Press contact row */
+  /* ── PRESS CONTACT ROW ── */
   .press-contact-row {
     display: flex;
     flex-direction: column;
@@ -419,15 +713,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     align-items: flex-start;
   }
 
-  .press-contact-row h2 {
-    color: var(--color-white);
-    margin-bottom: var(--space-sm);
-  }
-
-  .press-contact-row p {
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0;
-  }
+  .press-contact-row h2 { color: var(--color-white); margin-bottom: var(--space-sm); }
+  .press-contact-row p { color: rgba(255,255,255,0.8); margin: 0; }
 
   @media (min-width: 760px) {
     .press-contact-row {

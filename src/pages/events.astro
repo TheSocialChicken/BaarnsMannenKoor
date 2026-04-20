@@ -1,0 +1,361 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+/*
+  TICKET EMBED INSTRUCTIONS
+  ─────────────────────────
+  Replace the placeholder <div class="ticket-placeholder"> blocks below
+  with your real ticket widget from TicketTailor, Eventbrite, etc.
+
+  TicketTailor inline widget example:
+  <div class="tt-widget">
+    <div class="tt-widget-fallback">
+      <p><a href="https://www.tickettailor.com/events/JOUW_ORG/JOUW_EVENT" target="_blank">Koop kaartjes</a></p>
+    </div>
+    <script src="https://cdn.tickettailor.com/js/widgets/min/widget.js"
+      data-url="https://www.tickettailor.com/events/JOUW_ORG/JOUW_EVENT"
+      data-type="inline"
+      data-auto-open="false"
+      data-iframe-title="Kaartjes kopen"
+    ></script>
+  </div>
+
+  Eventbrite checkout widget example:
+  <div id="eventbrite-widget-container-EVENT_ID"></div>
+  <script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+  <script>
+    window.EBWidgets.createWidget({
+      widgetType: 'checkout',
+      eventId: 'EVENT_ID',
+      iframeContainerHeight: 425,
+    });
+  </script>
+*/
+---
+
+<Layout
+  title="Concerten & Evenementen"
+  description="Aankomende concerten van het Baarns MannenKoor. Koop kaartjes of meld u aan voor onze evenementen in Baarn en omgeving."
+  activePage="events"
+>
+  <Hero
+    title="Concerten & Evenementen"
+    subtitle="Seizoen 2025 – 2026"
+    description="Kom luisteren naar het Baarns MannenKoor. Wij geven jaarlijks meerdere concerten in Baarn en omgeving."
+    backgroundImage={`${base}/images/8782@2x.jpg`}
+    compact={true}
+  />
+
+  <!-- Upcoming concerts -->
+  <section class="section" aria-labelledby="upcoming-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="upcoming-heading">Aankomende concerten</h2>
+        <hr class="divider" />
+      </div>
+
+      <div class="events-list">
+
+        <!-- EVENT 1 — replace with real data and ticket embed -->
+        <article class="event-card" aria-labelledby="event-1-title">
+          <div class="event-date-block" aria-label="Datum">
+            <span class="event-day">?</span>
+            <span class="event-month">2026</span>
+          </div>
+          <div class="event-details">
+            <div class="event-tag">Kerstconcert</div>
+            <h3 id="event-1-title" class="event-title">Kerstconcert 2025</h3>
+            <p class="event-meta">
+              <span>Paaskerk Baarn</span>
+              <span class="event-meta-sep" aria-hidden="true">·</span>
+              <span>20:00 uur</span>
+            </p>
+            <p class="event-desc">
+              Ons jaarlijkse kerstconcert in de Paaskerk te Baarn. Een ontroerend
+              programma van kerstliederen en klassiek koorwerk, samen met speciale gasten.
+            </p>
+            <!-- REPLACE THIS BLOCK WITH YOUR TICKET EMBED -->
+            <div class="ticket-placeholder">
+              <p class="ticket-placeholder-msg">Kaartjes binnenkort beschikbaar.</p>
+              <a href={`${base}/contact`} class="btn btn--outline-dark btn--sm">
+                Stel een vraag
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- EVENT 2 -->
+        <article class="event-card" aria-labelledby="event-2-title">
+          <div class="event-date-block" aria-label="Datum">
+            <span class="event-day">?</span>
+            <span class="event-month">2026</span>
+          </div>
+          <div class="event-details">
+            <div class="event-tag">Najaarsconcert</div>
+            <h3 id="event-2-title" class="event-title">Najaarsconcert 2026</h3>
+            <p class="event-meta">
+              <span>Locatie volgt</span>
+              <span class="event-meta-sep" aria-hidden="true">·</span>
+              <span>Tijd volgt</span>
+            </p>
+            <p class="event-desc">
+              Ons najaarsconcert met een gevarieerd programma onder leiding van
+              dirigent Mark Walter. Data en locatie worden binnenkort bekendgemaakt.
+            </p>
+            <!-- REPLACE THIS BLOCK WITH YOUR TICKET EMBED -->
+            <div class="ticket-placeholder">
+              <p class="ticket-placeholder-msg">Kaartjes binnenkort beschikbaar.</p>
+              <a href={`${base}/contact`} class="btn btn--outline-dark btn--sm">
+                Stel een vraag
+              </a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Past concerts -->
+  <section class="section section--alt" aria-labelledby="past-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="past-heading">Eerdere concerten</h2>
+        <hr class="divider" />
+        <p>Een terugblik op recente optredens.</p>
+      </div>
+
+      <div class="past-grid">
+        <div class="past-item">
+          <img
+            src={`${base}/images/concert-poster-kerstkoor.jpg`}
+            alt="Concertposter Geef Vrede een Kans, Kerstconcert Baarns MannenKoor"
+            class="past-img"
+          />
+          <div class="past-info">
+            <div class="past-year">2024</div>
+            <h3>Geef Vrede een Kans</h3>
+            <p>Kerstconcert samen met het KinderKerstKoor. Paaskerk Baarn.</p>
+          </div>
+        </div>
+
+        <div class="past-item">
+          <img
+            src={`${base}/images/concert-poster-all-you-need-is-love.jpg`}
+            alt="Concertposter All You Need is Love, Baarns MannenKoor"
+            class="past-img"
+          />
+          <div class="past-info">
+            <div class="past-year">2023</div>
+            <h3>All You Need is Love</h3>
+            <p>Najaarsconcert met het Vredenhofensemble en Bachschool Baarn.</p>
+          </div>
+        </div>
+
+        <div class="past-item">
+          <img
+            src={`${base}/images/concert-poster-tram.jpg`}
+            alt="Baarns MannenKoor op de Vorstelijk Baarn Express"
+            class="past-img"
+          />
+          <div class="past-info">
+            <div class="past-year">2023</div>
+            <h3>Vorstelijk Baarn Express</h3>
+            <p>Optreden langs Laanstraat en Brink. Live koorzang voor winkelend publiek.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stay informed CTA -->
+  <section class="section section--dark" aria-labelledby="notify-heading">
+    <div class="container cta-row">
+      <div>
+        <h2 id="notify-heading">Op de hoogte blijven?</h2>
+        <p>Neem contact op en wij informeren u over aankomende concerten.</p>
+      </div>
+      <a href={`${base}/contact`} class="btn btn--primary">Contact opnemen</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Events list */
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .event-card {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: var(--space-xl);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    align-items: start;
+  }
+
+  @media (max-width: 560px) {
+    .event-card {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .event-date-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: var(--space-md) var(--space-sm);
+    color: var(--color-white);
+    min-width: 70px;
+    text-align: center;
+  }
+
+  .event-day {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--color-accent-light);
+  }
+
+  .event-month {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-top: var(--space-xs);
+  }
+
+  .event-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    margin-bottom: var(--space-sm);
+  }
+
+  .event-title {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .event-meta-sep { opacity: 0.4; }
+
+  .event-desc {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Ticket placeholder — swap this out for real embed */
+  .ticket-placeholder {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    padding: var(--space-md) var(--space-lg);
+    background: var(--color-bg-alt);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .ticket-placeholder-msg {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .btn--sm {
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+  }
+
+  /* Past concerts grid */
+  .past-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .past-item {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .past-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .past-info {
+    padding: var(--space-lg);
+  }
+
+  .past-year {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent-dark);
+    margin-bottom: var(--space-xs);
+  }
+
+  .past-info h3 {
+    font-size: 1.05rem;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+  }
+
+  .past-info p {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* CTA row */
+  .cta-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    align-items: flex-start;
+  }
+
+  .cta-row h2 { color: var(--color-white); margin-bottom: var(--space-sm); }
+  .cta-row p { color: rgba(255,255,255,0.8); margin: 0; }
+
+  @media (min-width: 760px) {
+    .cta-row {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+</style>
