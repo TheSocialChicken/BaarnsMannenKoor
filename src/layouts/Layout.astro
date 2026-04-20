@@ -7,7 +7,7 @@ export interface Props {
 
 const {
   title,
-  description = "Baarns MannenKoor — Een mannenkooor met hart en ziel, opgericht in 1907 in Baarn.",
+  description = "Baarns MannenKoor, een mannenkooor met hart en ziel, opgericht in 1907 in Baarn.",
   activePage = "",
 } = Astro.props;
 
@@ -30,13 +30,13 @@ const navLinks = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <title>{title} — Baarns MannenKoor</title>
+    <title>{title} | Baarns MannenKoor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
   </head>
   <body>
     <header class="site-header">
       <div class="header-inner">
-        <a href={`${base}/`} class="site-logo" aria-label="Baarns MannenKoor — terug naar home">
+        <a href={`${base}/`} class="site-logo" aria-label="Baarns MannenKoor, terug naar home">
           <span class="logo-title">Baarns MannenKoor</span>
           <span class="logo-sub">Opgericht 1907 &middot; Baarn</span>
         </a>
