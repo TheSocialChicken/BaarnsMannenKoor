@@ -113,12 +113,27 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         <!-- Contact info -->
         <aside class="contact-info" aria-label="Contactgegevens">
           <div class="info-section">
+            <h3>E-mail</h3>
+            <ul class="contact-email-list">
+              <li><a href="mailto:info@baarnsmannenkoor.nl">info@baarnsmannenkoor.nl</a></li>
+            </ul>
+          </div>
+
+          <div class="info-section">
+            <h3>Telefoon</h3>
+            <p><a href="tel:+31623665984">06-23665984</a></p>
+          </div>
+
+          <div class="info-section">
             <h3>Adres</h3>
             <address>
-              <strong>Gebouw De Pool</strong><br />
+              <strong>Repetities:</strong><br />
+              Gebouw De Pool<br />
               Dahliastraat 18<br />
-              3741 GL Baarn<br />
-              Nederland
+              3741 GL Baarn<br /><br />
+              <strong>Postadres:</strong><br />
+              p/a Gerard Doulaan 13<br />
+              3741 RE Baarn
             </address>
           </div>
 
@@ -135,12 +150,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           </div>
 
           <div class="info-section">
-            <h3>Direct langskomen?</h3>
-            <p>
-              U bent van harte welkom om een maandagavond langs te komen bij
-              Gebouw De Pool. We staan open voor belangstellenden en nieuwe
-              leden.
-            </p>
+            <h3>Bestuur</h3>
+            <ul class="board-list">
+              <li><strong>Voorzitter:</strong> Jan Kuijer<br /><a href="mailto:voorzitter@baarnsmannenkoor.nl">voorzitter@baarnsmannenkoor.nl</a></li>
+              <li><strong>Vice-voorzitter:</strong> Rudolf van Ommen<br /><a href="mailto:vicevoorzitter@baarnsmannenkoor.nl">vicevoorzitter@baarnsmannenkoor.nl</a></li>
+              <li><strong>Secretaris:</strong> Hans Stalenhoef<br /><a href="mailto:secretaris@baarnsmannenkoor.nl">secretaris@baarnsmannenkoor.nl</a></li>
+              <li><strong>Penningmeester:</strong> Herman Brink<br /><a href="mailto:penningmeester@baarnsmannenkoor.nl">penningmeester@baarnsmannenkoor.nl</a></li>
+              <li><strong>Bestuurslid:</strong> Arie Zonneveld</li>
+            </ul>
           </div>
 
           <div class="info-section">
@@ -151,13 +168,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             </p>
           </div>
 
-          <div class="info-route">
-            <h3>Route</h3>
-            <p>
-              Gebouw De Pool ligt in een rustige woonwijk in Baarn, goed
-              bereikbaar per auto en fiets. Parkeren is gratis mogelijk
-              in de omliggende straten.
-            </p>
+          <div class="info-section">
+            <h3>KVK</h3>
+            <p>40506315</p>
           </div>
         </aside>
 
@@ -355,6 +368,36 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     color: var(--color-text-muted);
     margin: 0;
     line-height: 1.7;
+  }
+
+  .contact-email-list,
+  .board-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  .board-list li {
+    padding-block: var(--space-xs);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .board-list li:last-child {
+    border-bottom: none;
+  }
+
+  .contact-info a {
+    color: var(--color-accent-dark);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .contact-info a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
   }
 
   /* Map placeholder */
