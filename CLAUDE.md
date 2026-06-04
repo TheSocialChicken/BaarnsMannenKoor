@@ -97,6 +97,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 | `responsive-css` | Grid/flex, clamp(), breakpoints, spacing |
 | `web-accessibility` | ARIA, semantic HTML, focus, contrast |
 | `design-system` | Color/type/spacing tokens, component variants |
+| `frontend-design` | Avoid generic AI aesthetics, bold design decisions |
+| `webapp-testing` | Playwright UI testing against local dev server |
+| `playwright-skill` | General browser automation |
 
 ---
 
@@ -114,7 +117,6 @@ Push to `main` → GitHub Actions builds and deploys automatically.
 
 ### High priority
 - [ ] **Ticket sales** — embed external ticketing (Eventbrite / TicketTailor / iTickets) or Stripe Checkout for concert tickets. TicketTailor works well for small orgs, no per-ticket fee.
-- [ ] **Concert calendar / events page** — `src/pages/events.astro` with upcoming concerts, dates, venues, ticket links
 - [ ] **Video/media carousel** — carousel on Media page for YouTube concert recordings; use YouTube embed (no cookies variant: `youtube-nocookie.com`) with lazy load
 
 ### Medium priority
@@ -128,8 +130,15 @@ Push to `main` → GitHub Actions builds and deploys automatically.
 - [ ] **Cookie banner** — only needed if analytics added
 - [ ] **Analytics** — Fathom or Plausible (privacy-friendly, no cookie banner needed)
 - [ ] **Search** — Pagefind static search (Astro integration available)
-- [ ] **404 page** — `src/pages/404.astro`
-- [ ] **Sitemap** — `@astrojs/sitemap` integration
+- [ ] **Sitemap** — `@astrojs/sitemap` removed (crashes with `base` path in v3.7.3); re-add when fixed upstream
+
+### Done
+- [x] **Events page** — `src/pages/events.astro`
+- [x] **404 page** — `src/pages/404.astro`
+- [x] **Video carousel** — YouTube embeds on Media page
+- [x] **Audio player** — native `<audio>` on Media page
+- [x] **Lightbox gallery** — Media page
+- [x] **PDF downloads** — WERVINGSFLYERPROJECTKOOR2026.pdf linked
 
 ---
 
