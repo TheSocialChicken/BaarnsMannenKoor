@@ -120,8 +120,7 @@ Push to `main` → GitHub Actions builds and deploys automatically.
 - [ ] **Video/media carousel** — carousel on Media page for YouTube concert recordings; use YouTube embed (no cookies variant: `youtube-nocookie.com`) with lazy load
 
 ### Medium priority
-- [ ] **Audio player** — embedded player for choir recordings on Media page (Howler.js or native `<audio>`)
-- [ ] **Photo gallery** — lightbox gallery on Media or new Gallery page; images already in `public/images/`
+- [ ] **Mark Walter — more info** — expand conductor page with his own concerts/performances, recordings, other ensembles he works with
 - [ ] **Newsletter signup** — Mailchimp or Buttondown embed, probably on homepage and membership page
 - [ ] **Downloadable PDFs** — sheet music, flyers (WERVINGSFLYERPROJECTKOOR2026.pdf already in `public/images/`)
 
