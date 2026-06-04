@@ -139,23 +139,30 @@ const galleryPhotos = [
       <div class="section-header">
         <h2 id="audio-heading">Luisterfragmenten</h2>
         <hr class="divider" />
-        <p>Beluister fragmenten van ons koor.</p>
+        <p>Volledige concertopnamen zijn beschikbaar op ons YouTube-kanaal.</p>
       </div>
+      <div class="audio-cta">
+        <a href="https://www.youtube.com/@baarnsmannenkoor" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+          Luister op YouTube
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <div class="audio-list">
-        <div class="audio-item">
-          <div class="audio-meta">
-            <span class="audio-tag">Bas-partij</span>
-            <h3 class="audio-title">Du, du liegst mir im Herzen</h3>
-            <p class="audio-desc">Basoefening, Nr. 304</p>
-          </div>
-          <audio controls class="audio-player" preload="none">
-            <source src={`${base}/images/du-liegst-mir-im-herzen-bas.m4a`} type="audio/mp4" />
-            Uw browser ondersteunt geen audio-element.
-          </audio>
-        </div>
-
-        <!-- Add more <div class="audio-item"> blocks here for additional recordings -->
+  <!-- ═══════════════════════════════════════ CONCERT POSTERS -->
+  <section class="section" aria-labelledby="posters-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="posters-heading">Concertposters</h2>
+        <hr class="divider" />
+        <p>Posters door de jaren heen.</p>
+      </div>
+      <div class="poster-grid">
+        <img src={`${base}/images/8821@2x.png`}  alt="Baarns MannenKoor concertposter 2025" class="poster-img" loading="lazy" />
+        <img src={`${base}/images/8823@2x.png`}  alt="Baarns MannenKoor concertposter 2025" class="poster-img" loading="lazy" />
+        <img src={`${base}/images/concert-poster-kerstkoor.jpg`} alt="Kerstconcert – Geef Vrede een Kans 2024" class="poster-img" loading="lazy" />
+        <img src={`${base}/images/concert-poster-all-you-need-is-love.jpg`} alt="Najaarsconcert – All You Need is Love 2023" class="poster-img" loading="lazy" />
+        <img src={`${base}/images/concert-poster-tram.jpg`} alt="Vorstelijk Baarn Express 2023" class="poster-img" loading="lazy" />
       </div>
     </div>
   </section>
@@ -497,53 +504,29 @@ const galleryPhotos = [
   }
 
   /* ── AUDIO ── */
-  .audio-list {
-    display: flex;
-    flex-direction: column;
+  .audio-cta {
+    text-align: center;
+    padding: var(--space-xl) 0;
+  }
+
+  /* ── CONCERT POSTERS ── */
+  .poster-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
   }
+  @media (min-width: 600px) { .poster-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (min-width: 900px) { .poster-grid { grid-template-columns: repeat(5, 1fr); } }
 
-  .audio-item {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-lg);
-    align-items: center;
-    background: var(--color-white);
-    border: 1px solid var(--color-border);
-    border-left: 4px solid var(--color-accent);
-    border-radius: var(--radius-lg);
-    padding: var(--space-xl);
-  }
-
-  .audio-meta { flex: 1; min-width: 200px; }
-
-  .audio-tag {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--color-accent-dark);
-    display: block;
-    margin-bottom: var(--space-xs);
-  }
-
-  .audio-title {
-    font-size: 1.1rem;
-    color: var(--color-primary);
-    margin-bottom: var(--space-xs);
-  }
-
-  .audio-desc {
-    font-size: 0.88rem;
-    color: var(--color-text-muted);
-    margin: 0;
-  }
-
-  .audio-player {
+  .poster-img {
     width: 100%;
-    max-width: 420px;
-    accent-color: var(--color-accent);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    object-fit: cover;
+    aspect-ratio: 2/3;
+    transition: transform 0.2s;
   }
+  .poster-img:hover { transform: scale(1.03); }
 
   /* ── GALLERY + LIGHTBOX ── */
   .photo-gallery {
