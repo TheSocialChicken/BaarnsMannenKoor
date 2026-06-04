@@ -85,10 +85,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
             -->
             <div class="tt-widget-container">
               <div class="tt-widget-fallback">
-                <p class="ticket-placeholder-msg">Kaartjes binnenkort beschikbaar.</p>
-                <a href={`${base}/contact`} class="btn btn--outline-dark btn--sm">Stel een vraag</a>
+                <p><a href="https://buytickets.at/baarnsmannenkoor/2250773" target="_blank" rel="noopener noreferrer">Koop kaartjes</a></p>
               </div>
-              <!-- PASTE TICKETTAILOR SCRIPT TAG HERE, replacing the fallback above -->
+              <script src="https://cdn.tickettailor.com/js/widgets/min/widget.js"
+                data-url="https://buytickets.at/baarnsmannenkoor/2250773"
+                data-type="inline"
+                data-auto-open="false"
+                data-iframe-title="Kaartjes kopen – Kerstconcert 2026 Baarns MannenKoor"
+              ></script>
             </div>
 
           </div>
