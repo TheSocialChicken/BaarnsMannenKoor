@@ -58,15 +58,15 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
       <div class="events-list">
 
-        <!-- EVENT 1 — replace with real data and ticket embed -->
+        <!-- KERSTCONCERT 2026 -->
         <article class="event-card" aria-labelledby="event-1-title">
           <div class="event-date-block" aria-label="Datum">
-            <span class="event-day">?</span>
+            <span class="event-day">DEC</span>
             <span class="event-month">2026</span>
           </div>
           <div class="event-details">
             <div class="event-tag">Kerstconcert</div>
-            <h3 id="event-1-title" class="event-title">Kerstconcert 2025</h3>
+            <h3 id="event-1-title" class="event-title">Kerstconcert 2026 – Baarns MannenKoor</h3>
             <p class="event-meta">
               <span>Paaskerk Baarn</span>
               <span class="event-meta-sep" aria-hidden="true">·</span>
@@ -76,13 +76,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               Ons jaarlijkse kerstconcert in de Paaskerk te Baarn. Een ontroerend
               programma van kerstliederen en klassiek koorwerk, samen met speciale gasten.
             </p>
-            <!-- REPLACE THIS BLOCK WITH YOUR TICKET EMBED -->
-            <div class="ticket-placeholder">
-              <p class="ticket-placeholder-msg">Kaartjes binnenkort beschikbaar.</p>
-              <a href={`${base}/contact`} class="btn btn--outline-dark btn--sm">
-                Stel een vraag
-              </a>
+
+            <!-- TicketTailor embed — paste your widget script here -->
+            <!-- INSTRUCTIONS:
+                 1. Log in to TicketTailor
+                 2. Go to your Kerstconcert 2026 event → Sell tickets → Embed widget
+                 3. Copy the <script> tag and replace the block below
+            -->
+            <div class="tt-widget-container">
+              <div class="tt-widget-fallback">
+                <p class="ticket-placeholder-msg">Kaartjes binnenkort beschikbaar.</p>
+                <a href={`${base}/contact`} class="btn btn--outline-dark btn--sm">Stel een vraag</a>
+              </div>
+              <!-- PASTE TICKETTAILOR SCRIPT TAG HERE, replacing the fallback above -->
             </div>
+
           </div>
         </article>
 
@@ -270,8 +278,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     margin-bottom: var(--space-lg);
   }
 
-  /* Ticket placeholder — swap this out for real embed */
-  .ticket-placeholder {
+  /* TicketTailor widget container */
+  .tt-widget-container {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  /* Fallback shown until real embed is added */
+  .tt-widget-fallback {
     display: flex;
     align-items: center;
     gap: var(--space-md);
