@@ -38,15 +38,77 @@ jobs:
           PUBLIC_BUILD_SHA: ${{ github.sha }}
           PUBLIC_BUILD_DATE: ${{ github.event.head_commit.timestamp }}
 
+      - name: Upload dist for validation
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 1
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
 
+  validate:
+    name: Validate
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Install serve
+        run: npm install -g serve
+
+      - name: Smoke test — all pages return 200
+        run: |
+          serve dist/ -p 4321 &
+          sleep 3
+
+          PAGES=(
+            "/"
+            "/events/"
+            "/history/"
+            "/conductor/"
+            "/media/"
+            "/membership/"
+            "/friends/"
+            "/contact/"
+            "/leden/"
+          )
+
+          FAILED=0
+          for path in "${PAGES[@]}"; do
+            status=$(curl -sL -o /dev/null -w "%{http_code}" "http://localhost:4321${path}")
+            if [ "$status" = "200" ]; then
+              echo "✓ ${path} → ${status}"
+            else
+              echo "✗ ${path} → ${status}"
+              FAILED=1
+            fi
+          done
+
+          if [ $FAILED -ne 0 ]; then
+            echo "One or more pages failed — deploy blocked."
+            exit 1
+          fi
+
+      - name: Check no broken internal asset refs
+        run: |
+          # Warn if any HTML references /BaarnsMannenKoor/ (old base path)
+          if grep -r '/BaarnsMannenKoor/' dist/ --include="*.html" -l; then
+            echo "ERROR: old base path /BaarnsMannenKoor/ found in output — check astro.config.mjs"
+            exit 1
+          fi
+          echo "✓ No stale base path references found"
+
   deploy:
     name: Deploy
-    needs: build
+    needs: [build, validate]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
