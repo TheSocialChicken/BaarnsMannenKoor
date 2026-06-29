@@ -18,6 +18,10 @@ const videos = [
   { id: "17KpVmg359s", title: "Promotiefilm Kerst", year: "2024" },
   { id: "XhznYlViIrY", title: "Promotiefilm Concert 13 Oktober", year: "2024" },
   { id: "IGOe9hSmDlU", title: "De Parelvissers 2007–2024", year: "2024" },
+  { id: "gAb8XWoy55c", title: "Baarns Mannenkoor oefent Danny Boy", year: "" },
+  { id: "l5x2YUKCmJE", title: "When I am 64 — de Speeldoos Baarn", year: "" },
+  { id: "qTpyd7chW2g", title: "Hongaars lied: A csitári hegyek alatt", year: "" },
+  { id: "J7ohBekhvRM", title: "Het Witte Kerkje in Baarn", year: "" },
 ];
 
 const galleryPhotos = [
@@ -109,7 +113,7 @@ const galleryPhotos = [
                     <span class="yt-play-btn" aria-hidden="true">&#9654;</span>
                   </button>
                 </div>
-                <p class="video-caption">{v.title} <span class="video-year">({v.year})</span></p>
+                <p class="video-caption">{v.title}{v.year ? <span class="video-year"> ({v.year})</span> : null}</p>
               </div>
             ))}
           </div>
@@ -243,21 +247,6 @@ const galleryPhotos = [
           <span class="download-arrow" aria-hidden="true">&#8595;</span>
         </a>
 
-        <a
-          href={`${base}/images/Nr,304%20Du,%20du%20liegst%20mir%20im%20Herzen.pdf`}
-          class="download-item"
-          download
-          target="_blank"
-          rel="noopener"
-          aria-label="Download bladmuziek Nr. 304 Du du liegst mir im Herzen als PDF"
-        >
-          <span class="download-icon" aria-hidden="true">&#127926;</span>
-          <div class="download-info">
-            <span class="download-name">Nr. 304 — Du, du liegst mir im Herzen</span>
-            <span class="download-type">Bladmuziek · PDF</span>
-          </div>
-          <span class="download-arrow" aria-hidden="true">&#8595;</span>
-        </a>
       </div>
     </div>
   </section>
@@ -327,7 +316,7 @@ const galleryPhotos = [
       const id = btn.dataset.id!;
       const title = btn.dataset.title ?? 'YouTube video';
       const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0&autoplay=1`;
+      iframe.src = `https://www.youtube.com/embed/${id}?rel=0&autoplay=1&origin=https://baarnsmannenkoor.nl`;
       iframe.title = title;
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       iframe.allowFullscreen = true;

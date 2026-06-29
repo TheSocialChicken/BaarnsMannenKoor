@@ -201,7 +201,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       const id = btn.dataset.id!;
       const title = btn.dataset.title ?? '';
       const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0&autoplay=1`;
+      iframe.src = `https://www.youtube.com/embed/${id}?rel=0&autoplay=1&origin=https://baarnsmannenkoor.nl`;
       iframe.title = title;
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       iframe.allowFullscreen = true;
