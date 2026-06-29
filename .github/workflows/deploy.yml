@@ -106,9 +106,22 @@ jobs:
           fi
           echo "✓ No stale base path references found"
 
+  test:
+    name: Test — bladmuziek sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verify bladmuziek files match leden.astro
+        run: node scripts/check-bladmuziek.mjs
+
   deploy:
     name: Deploy
-    needs: [build, validate]
+    needs: [build, validate, test]
     runs-on: ubuntu-latest
     environment:
       name: github-pages
