@@ -94,13 +94,20 @@ const galleryPhotos = [
             {videos.map((v, i) => (
               <div class="video-slide" id={`slide-${i}`}>
                 <div class="video-embed-wrap">
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${v.id}?rel=0`}
-                    title={v.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    loading="lazy"
-                  ></iframe>
+                  <button
+                    class="yt-facade"
+                    data-id={v.id}
+                    data-title={v.title}
+                    aria-label={`Speel video: ${v.title}`}
+                  >
+                    <img
+                      src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
+                      alt={v.title}
+                      loading="lazy"
+                      class="yt-thumb"
+                    />
+                    <span class="yt-play-btn" aria-hidden="true">&#9654;</span>
+                  </button>
                 </div>
                 <p class="video-caption">{v.title} <span class="video-year">({v.year})</span></p>
               </div>
@@ -314,6 +321,21 @@ const galleryPhotos = [
 </Layout>
 
 <script>
+  // ── YOUTUBE FACADE — load iframe only on click ───────────────
+  document.querySelectorAll<HTMLButtonElement>('.yt-facade').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id!;
+      const title = btn.dataset.title ?? 'YouTube video';
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0&autoplay=1`;
+      iframe.title = title;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
+      btn.replaceWith(iframe);
+    }, { once: true });
+  });
+
   // ── VIDEO CAROUSEL ──────────────────────────────────────────
   const track = document.getElementById('video-track');
   const dots = document.querySelectorAll<HTMLButtonElement>('.dot');
@@ -419,13 +441,43 @@ const galleryPhotos = [
     background: #000;
   }
 
-  .video-embed-wrap iframe {
+  .yt-facade {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     border: 0;
+    padding: 0;
+    background: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
+  .yt-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+
+  .yt-facade:hover .yt-thumb { opacity: 0.65; }
+
+  .yt-play-btn {
+    position: relative;
+    z-index: 1;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+    transition: transform 0.15s;
+    line-height: 1;
+  }
+
+  .yt-facade:hover .yt-play-btn { transform: scale(1.15); }
 
   .video-caption {
     text-align: center;
