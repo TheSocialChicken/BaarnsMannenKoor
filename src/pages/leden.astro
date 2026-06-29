@@ -1,0 +1,335 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+// SHA-256 of password "bmkoor" — update hash to change password
+// New hash: echo -n "newpassword" | sha256sum
+const PASSWORD_HASH = "97bf6c056607dffc15ae5147a30974c72e5bfe2d74f2939f1e5d1a8554a9707c";
+
+const BLADMUZIEK = [
+  { id: "bnd", title: "Brand New Day", pdf: "Finale 2006 - [630 Brand new day SATBpf] - Nr,373 Brand new day SATBpf.pdf" },
+  { id: "okl", title: "Oklahoma", pdf: "Nr,347a Oklahoma satb.pdf" },
+  { id: "rdnm", title: "Rob de Nijs Medley", pdf: "Nr,199 Rob de Nijs medley .pdf" },
+];
+
+const STEMMEN = [
+  {
+    stem: "Tenoot",
+    opnames: [
+      { stuk: "Brand New Day", bestand: "tenoot/Brand new day - tenor.m4a" },
+      { stuk: "Oklahoma", bestand: "tenoot/Oklahoma tenor.m4a" },
+      { stuk: "Rob de Nijs — Dag Zuster", bestand: "tenoot/Rob de Nijs - dag zuster - tenor.m4a" },
+      { stuk: "Rob de Nijs — Een Foto", bestand: "tenoot/Rob de nijs - een foto - tenor.m4a" },
+      { stuk: "Rob de Nijs — Jan Klaassen", bestand: "tenoot/Rob de nijs - jan klaassen - tenor.m4a" },
+      { stuk: "Rob de Nijs — Zachtjes Tikt de Regen", bestand: "tenoot/Rob de nijs - zachtjes tikt de regen - tenor.m4a" },
+      { stuk: "Rob de Nijs — Zet een Kaars", bestand: "tenoot/Rob de nijs - zet een kaars - tenor.m4a" },
+    ],
+  },
+  { stem: "Bas", opnames: [] },
+  { stem: "Bas II", opnames: [] },
+  { stem: "Lage Tenoor", opnames: [] },
+];
+---
+
+<Layout
+  title="Ledenportaal — Bladmuziek & Stemmen"
+  description="Besloten pagina voor leden van het Baarns MannenKoor."
+  activePage=""
+>
+  <Hero
+    title="Ledenportaal"
+    subtitle="Baarns MannenKoor"
+    description="Bladmuziek, voorzingopnames per stem en het repetitieschema."
+    backgroundImage={`${base}/images/8782@2x.jpg`}
+    compact={true}
+  />
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Password gate -->
+      <div id="password-gate" class="gate-wrap">
+        <div class="gate-card">
+          <h2>Inloggen</h2>
+          <p>Alleen toegankelijk voor leden van het koor.</p>
+          <form id="gate-form" autocomplete="off">
+            <label for="pw-input" class="gate-label">Wachtwoord</label>
+            <div class="gate-row">
+              <input type="password" id="pw-input" class="gate-input" placeholder="Wachtwoord" required autofocus />
+              <button type="submit" class="btn btn--primary">Inloggen</button>
+            </div>
+            <p id="gate-error" class="gate-error" aria-live="polite"></p>
+          </form>
+          <p class="gate-hint">Wachtwoord vergeten? Neem contact op met de secretaris.</p>
+        </div>
+      </div>
+
+      <!-- Protected content -->
+      <div id="leden-content" hidden>
+
+        <!-- Bladmuziek -->
+        <div class="section-header">
+          <h2>Bladmuziek</h2>
+          <hr class="divider" />
+          <p>Klik op een stuk om de bladmuziek in te zien of te downloaden.</p>
+        </div>
+
+        <div class="music-list">
+          {BLADMUZIEK.map((stuk) => (
+            <details class="music-item" id={`stuk-${stuk.id}`}>
+              <summary class="music-summary">
+                <span class="music-title">{stuk.title}</span>
+                <span class="music-actions">
+                  <a
+                    href={`${base}/bladmuziek/${stuk.pdf}`}
+                    class="btn btn--outline-dark btn--sm"
+                    download
+                    onclick="event.stopPropagation()"
+                  >Downloaden</a>
+                  <span class="music-toggle-icon" aria-hidden="true">▾</span>
+                </span>
+              </summary>
+              <div class="music-viewer">
+                <iframe
+                  src={`${base}/bladmuziek/${stuk.pdf}#view=FitH`}
+                  class="pdf-frame"
+                  title={`Bladmuziek ${stuk.title}`}
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <!-- Voorzingopnames per stem -->
+        <div class="section-header" style="margin-top: var(--space-3xl)">
+          <h2>Voorzingopnames per stem</h2>
+          <hr class="divider" />
+        </div>
+
+        <div class="stemmen-grid">
+          {STEMMEN.map((s) => (
+            <div class="stem-card">
+              <h3 class="stem-title">{s.stem}</h3>
+              {s.opnames.length === 0 ? (
+                <p class="stem-empty">Opnames volgen.</p>
+              ) : (
+                <ul class="opname-list">
+                  {s.opnames.map((o) => (
+                    <li class="opname-item">
+                      <span class="opname-label">{o.stuk}</span>
+                      <audio controls preload="none" class="opname-audio">
+                        <source src={`${base}/bladmuziek/${o.bestand}`} type="audio/mp4" />
+                      </audio>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <!-- Repetitieschema -->
+        <div class="section-header" style="margin-top: var(--space-3xl)">
+          <h2>Repetitieschema</h2>
+          <hr class="divider" />
+        </div>
+        <div class="download-block">
+          <p>Repetitieschema juli &amp; augustus 2025.</p>
+          <a href={`${base}/downloads/Repetitieschema juli & augustus.docx`} class="btn btn--primary" download>
+            Schema downloaden
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script define:vars={{ PASSWORD_HASH }}>
+  const SESSION_KEY = "bmk_leden_auth";
+
+  async function sha256(msg) {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+  }
+
+  function unlock() {
+    document.getElementById("password-gate").hidden = true;
+    document.getElementById("leden-content").hidden = false;
+  }
+
+  if (sessionStorage.getItem(SESSION_KEY) === "1") unlock();
+
+  document.getElementById("gate-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const input = document.getElementById("pw-input");
+    const hash = await sha256(input.value);
+    if (hash === PASSWORD_HASH) {
+      sessionStorage.setItem(SESSION_KEY, "1");
+      unlock();
+    } else {
+      document.getElementById("gate-error").textContent = "Onjuist wachtwoord. Probeer opnieuw.";
+      input.value = "";
+      input.focus();
+    }
+  });
+</script>
+
+<style>
+  .gate-wrap {
+    display: flex;
+    justify-content: center;
+    padding-block: var(--space-2xl);
+  }
+
+  .gate-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2xl) var(--space-3xl);
+    max-width: 420px;
+    width: 100%;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+  }
+
+  .gate-card h2 { margin-bottom: var(--space-sm); }
+  .gate-card > p { color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: var(--space-xl); }
+
+  .gate-label {
+    display: block;
+    text-align: left;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+  }
+
+  .gate-row { display: flex; gap: var(--space-sm); }
+
+  .gate-input {
+    flex: 1;
+    padding: 0.65rem var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-bg);
+  }
+
+  .gate-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(201,146,58,0.15);
+  }
+
+  .gate-error { color: #c0392b; font-size: 0.88rem; min-height: 1.2em; margin: var(--space-sm) 0 0; }
+  .gate-hint { margin-top: var(--space-lg); font-size: 0.82rem; color: var(--color-text-light); }
+
+  /* Bladmuziek */
+  .music-list { display: flex; flex-direction: column; gap: var(--space-md); }
+
+  .music-item {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .music-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-lg) var(--space-xl);
+    cursor: pointer;
+    list-style: none;
+    gap: var(--space-md);
+  }
+
+  .music-summary::-webkit-details-marker { display: none; }
+
+  .music-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-primary);
+  }
+
+  .music-actions { display: flex; align-items: center; gap: var(--space-md); flex-shrink: 0; }
+
+  .music-toggle-icon {
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    transition: transform var(--transition);
+  }
+
+  details[open] .music-toggle-icon { transform: rotate(180deg); }
+
+  .music-viewer { border-top: 1px solid var(--color-border); }
+
+  .pdf-frame {
+    width: 100%;
+    height: 600px;
+    border: none;
+    display: block;
+    background: #f5f5f5;
+  }
+
+  /* Stemmen */
+  .stemmen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .stem-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .stem-title {
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 1rem;
+    padding: var(--space-md) var(--space-lg);
+    margin: 0;
+  }
+
+  .stem-empty {
+    padding: var(--space-lg);
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+
+  .opname-list { list-style: none; padding: var(--space-md) var(--space-lg); display: flex; flex-direction: column; gap: var(--space-lg); }
+
+  .opname-item { display: flex; flex-direction: column; gap: var(--space-xs); }
+
+  .opname-label { font-size: 0.88rem; font-weight: 600; color: var(--color-primary); }
+
+  .opname-audio { width: 100%; height: 36px; accent-color: var(--color-accent); }
+
+  /* Download */
+  .download-block {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .download-block p { margin: 0; color: var(--color-text-muted); }
+
+  .btn--sm { font-size: 0.85rem; padding: 0.45rem 1rem; }
+</style>

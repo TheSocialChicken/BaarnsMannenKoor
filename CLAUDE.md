@@ -4,8 +4,8 @@
 Website for **Baarns MannenKoor** (Baarn Men's Choir), founded 1907. Astro static site on GitHub Pages replacing baarnsmannenkoor.nl.
 
 **Owner:** TheSocialChicken (GitHub)
-**Live:** https://thesocialchicken.github.io/BaarnsMannenKoor/
-**Old site:** https://baarnsmannenkoor.nl
+**Live:** https://baarnsmannenkoor.nl (custom domain — set in GitHub Pages Settings)
+**GitHub Pages fallback:** https://thesocialchicken.github.io/BaarnsMannenKoor/ (redirects to custom domain)
 **Tracked in:** [kamitor/K-Libary](https://github.com/kamitor/K-Libary) — `BaarnsMannenKoor/INDEX.md`
 
 ---
@@ -13,6 +13,8 @@ Website for **Baarns MannenKoor** (Baarn Men's Choir), founded 1907. Astro stati
 ## Tech Stack
 - **Framework:** Astro (static, output: `dist/`)
 - **Hosting:** GitHub Pages via `.github/workflows/deploy.yml` — every push to `main` deploys
+- **Deployment rule:** Old site stays live until new deploy fully passes checks. `concurrency.cancel-in-progress: false` enforces this. Never disable this setting.
+- **Always commit & push** after every change — no working files left uncommitted
 - **Styling:** Plain CSS, scoped per `.astro` component, CSS custom properties for all tokens
 - **Forms:** formsubmit.co → `info@baarnsmannenkoor.nl`
 - **Domain:** baarnsmannenkoor.nl (DNS not yet pointed)
