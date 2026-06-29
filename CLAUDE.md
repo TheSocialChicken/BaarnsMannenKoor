@@ -133,6 +133,9 @@ Push to `main` → GitHub Actions builds and deploys automatically.
 - [ ] **Search** — Pagefind static search (Astro integration available)
 - [ ] **Sitemap** — `@astrojs/sitemap` removed (crashes with `base` path in v3.7.3); re-add when fixed upstream
 
+### Research / future
+- [ ] **Bladmuziek–audio sync** — highlight notes in PDF as audio plays. Requires: PDF.js (canvas rendering), manual or algorithmic timing markers per maat, Web Audio API for position tracking. Simple variant: progress bar with handmatig gezette markeringen per maat. Full score-following is research-level complexity. Approach: start with PDF.js + handmatige timestamps, later automatiseren.
+
 ### Done
 - [x] **Events page** — `src/pages/events.astro`
 - [x] **404 page** — `src/pages/404.astro`
