@@ -12,6 +12,10 @@ const {
 } = Astro.props;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const buildSha = (import.meta.env.PUBLIC_BUILD_SHA ?? "dev").slice(0, 7);
+const buildDate = import.meta.env.PUBLIC_BUILD_DATE
+  ? new Date(import.meta.env.PUBLIC_BUILD_DATE).toLocaleDateString("nl-NL", { day: "numeric", month: "short", year: "numeric" })
+  : "lokaal";
 const navLinks = [
   { href: `${base}/`, label: "Home", key: "home" },
   { href: `${base}/events`, label: "Concerten", key: "events" },
@@ -158,6 +162,7 @@ const navLinks = [
       </div>
       <div class="footer-bottom">
         <p>&copy; {new Date().getFullYear()} Baarns MannenKoor. Alle rechten voorbehouden.</p>
+        <p class="build-version">v{buildSha} &middot; {buildDate}</p>
       </div>
     </footer>
 
@@ -687,6 +692,14 @@ const navLinks = [
     color: rgba(255, 255, 255, 0.4);
     max-width: var(--container-max);
     margin-inline: auto;
+  }
+
+  .build-version {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.2);
+    margin-top: var(--space-xs);
+    font-family: monospace;
+    letter-spacing: 0.04em;
   }
 
   @media (min-width: 640px) {
