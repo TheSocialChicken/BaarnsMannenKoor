@@ -133,13 +133,79 @@ const STEMMEN = [
 
         <!-- Repetitieschema -->
         <div class="section-header" style="margin-top: var(--space-3xl)">
-          <h2>Repetitieschema</h2>
+          <h2>Repetitieschema 2026</h2>
           <hr class="divider" />
+          <p>T.b.v. najaarsconcert <em>De Verbeelding</em> (Escher &amp; Bach) · Generale 3 okt · Concert 4 okt</p>
         </div>
-        <div class="download-block">
-          <p>Repetitieschema juli &amp; augustus 2025.</p>
-          <a href={`${base}/downloads/Repetitieschema juli & augustus.docx`} class="btn btn--primary" download>
-            Schema downloaden
+
+        <div class="schema-note">
+          <strong>Standaard:</strong> 19:45–22:00 gezamenlijk &nbsp;·&nbsp; Let op: tijden variëren (zie per datum)
+        </div>
+
+        <div class="schema-wrap">
+          <table class="schema-table">
+            <thead>
+              <tr>
+                <th>Datum</th>
+                <th>Eerste deel</th>
+                <th>Tweede deel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="schema-date">6 juli</td>
+                <td><ul class="stuk-list"><li>Nr. 373 Brand New Day</li><li>Nr. 332 Oklahoma</li><li>Nr. 199 Rob de Nijs Medley</li><li>Nr. 326 Speak Softly Love</li></ul></td>
+                <td><ul class="stuk-list"><li>Nr. 370 Lacrymosa</li><li>Nr. 138 Climb Every Mountain</li></ul></td>
+              </tr>
+              <tr>
+                <td class="schema-date">13 juli</td>
+                <td><ul class="stuk-list"><li>Nr. 370 Lacrymosa</li><li>Nr. 177 Edelweiss</li><li>Nr. 199 Rob de Nijs Medley</li></ul></td>
+                <td><ul class="stuk-list"><li>Nr. 332 Oklahoma</li><li>Nr. 373 Brand New Day</li><li>Nr. 138 Climb Every Mountain</li></ul></td>
+              </tr>
+              <tr>
+                <td class="schema-date">20 juli</td>
+                <td><ul class="stuk-list"><li>Nr. 326 Speak Softly Love</li><li>Nr. 370 Lacrymosa</li><li>Nr. 199 Rob de Nijs Medley</li></ul></td>
+                <td><ul class="stuk-list"><li>Nr. 177 Edelweiss</li><li>Nr. 332 Oklahoma</li><li>Nr. 373 Brand New Day</li></ul></td>
+              </tr>
+              <tr class="schema-vacation">
+                <td class="schema-date">27 jul – 10 aug</td>
+                <td colspan={2}>🏖 Vakantieperiode</td>
+              </tr>
+              <tr>
+                <td class="schema-date">17 augustus</td>
+                <td><ul class="stuk-list"><li>Nr. 373 Brand New Day</li><li>Nr. 332 Oklahoma</li><li>Nr. 199 Rob de Nijs Medley</li></ul></td>
+                <td><ul class="stuk-list"><li>Nr. 326 Speak Softly Love</li><li>Nr. 370 Lacrymosa</li><li>Nr. 138 Climb Every Mountain</li></ul></td>
+              </tr>
+              <tr>
+                <td class="schema-date">24 augustus<br/><span class="schema-note-inline">Gezamenlijk t/m 21:00</span></td>
+                <td><ul class="stuk-list"><li>Nr. 138 Climb Every Mountain</li><li>Nr. 332 Oklahoma</li><li>Nr. 373 Brand New Day</li><li>Nr. 177 Edelweiss</li><li>Nr. 326 Speak Softly Love</li></ul></td>
+                <td><ul class="stuk-list"><li>Nr. 13 Pelgrimskoor</li><li>Nr. 78 Les Pêcheurs de Perles (kort)</li><li>Nr. 148 Rhythm of Life</li><li>Nr. 368 Skyfall</li><li>Nr. 372 I Dreamed a Dream</li></ul></td>
+              </tr>
+              <tr>
+                <td class="schema-date">31 augustus<br/><span class="schema-note-inline">Gezamenlijk t/m 21:00</span></td>
+                <td><ul class="stuk-list"><li>Nr. 199 Rob de Nijs Medley</li><li>Nr. 332 Oklahoma</li><li>Nr. 373 Brand New Day</li><li>Nr. 370 Lacrymosa</li><li>Nr. 138 Climb Every Mountain</li></ul></td>
+                <td><ul class="stuk-list"><li>Nr. 371 Memory</li><li>Nr. 372 I Dreamed a Dream</li><li>Nr. 367 Ode aan Baarn</li><li>Nr. 346 House of the Rising Sun</li></ul></td>
+              </tr>
+              <tr class="schema-special">
+                <td class="schema-date">5 september<br/><span class="schema-note-inline">Cultureel festival</span></td>
+                <td colspan={2}><ul class="stuk-list stuk-list--inline"><li>Nr. 13 Pelgrimskoor</li><li>Nr. 78 Les Pêcheurs de Perles (kort)</li><li>Nr. 148 Rhythm of Life</li><li>Nr. 368 Skyfall</li><li>Nr. 367 Ode aan Baarn</li><li>Nr. 346 House of the Rising Sun</li><li>Nr. 371 Memory</li><li>Nr. 372 I Dreamed a Dream</li></ul></td>
+              </tr>
+              <tr class="schema-special">
+                <td class="schema-date">3 oktober</td>
+                <td colspan={2}><strong>Generale repetitie</strong></td>
+              </tr>
+              <tr class="schema-concert">
+                <td class="schema-date">4 oktober</td>
+                <td colspan={2}><strong>🎼 Themaconcert "De Verbeelding"</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="download-block" style="margin-top: var(--space-xl)">
+          <p>Schema als Word-document.</p>
+          <a href={`${base}/downloads/Repetitieschema juli & augustus.docx`} class="btn btn--outline-dark" download>
+            Downloaden (.docx)
           </a>
         </div>
 
@@ -347,6 +413,83 @@ const STEMMEN = [
   .opname-label { font-size: 0.88rem; font-weight: 600; color: var(--color-primary); }
 
   .opname-audio { width: 100%; height: 36px; accent-color: var(--color-accent); }
+
+  /* Schema */
+  .schema-note {
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    padding: var(--space-md) var(--space-lg);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-size: 0.9rem;
+    margin-bottom: var(--space-xl);
+  }
+
+  .schema-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .schema-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: var(--color-white);
+  }
+
+  .schema-table th {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-md) var(--space-lg);
+    text-align: left;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .schema-table td {
+    padding: var(--space-md) var(--space-lg);
+    vertical-align: top;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .schema-table tr:last-child td { border-bottom: none; }
+
+  .schema-date {
+    white-space: nowrap;
+    font-weight: 700;
+    color: var(--color-primary);
+    min-width: 120px;
+  }
+
+  .schema-note-inline {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--color-accent-dark);
+  }
+
+  .schema-vacation td { background: var(--color-bg-alt); color: var(--color-text-muted); font-style: italic; }
+  .schema-special td { background: #fff8ee; }
+  .schema-concert td { background: #f0f4ff; font-size: 1rem; }
+
+  .stuk-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .stuk-list li { font-size: 0.88rem; color: var(--color-text); }
+  .stuk-list li::before { content: "·  "; color: var(--color-accent); }
+
+  .stuk-list--inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
 
   /* Download */
   .download-block {
