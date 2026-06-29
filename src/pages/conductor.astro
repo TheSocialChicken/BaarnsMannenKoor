@@ -151,6 +151,33 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </div>
   </section>
 
+  <!-- Mark in actie -->
+  <section class="section section--alt" aria-labelledby="videos-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="videos-heading">Mark Walter in actie</h2>
+        <hr class="divider" />
+      </div>
+      <div class="conductor-videos">
+        {[
+          { id: "6aFnFQ0PbOE", title: "Mark Walter zingt Lydia — Fauré" },
+          { id: "s-ld4dg6Dv0",  title: "Compilatie Mark Walter zingt Huub Oosterhuis" },
+          { id: "xBFz1rba4Eo", title: "Dirigent BMK speelt in het Witte Kerkje" },
+        ].map((v) => (
+          <div class="cv-item">
+            <div class="cv-embed-wrap">
+              <button class="yt-facade" data-id={v.id} data-title={v.title} aria-label={`Speel: ${v.title}`}>
+                <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt={v.title} loading="lazy" class="yt-thumb" />
+                <span class="yt-play-btn" aria-hidden="true">&#9654;</span>
+              </button>
+            </div>
+            <p class="cv-caption">{v.title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Contact CTA -->
   <section class="section--dark section" aria-labelledby="conductor-cta">
     <div class="container">
@@ -167,6 +194,22 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     </div>
   </section>
 </Layout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.yt-facade').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id!;
+      const title = btn.dataset.title ?? '';
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0&autoplay=1`;
+      iframe.title = title;
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
+      btn.replaceWith(iframe);
+    }, { once: true });
+  });
+</script>
 
 <style>
   /* Conductor layout */
@@ -266,6 +309,72 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   .repertoire-category p {
     color: var(--color-text-muted);
     font-size: 0.93rem;
+    margin: 0;
+  }
+
+  /* Videos */
+  .conductor-videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  @media (min-width: 640px) {
+    .conductor-videos { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .cv-item { display: flex; flex-direction: column; gap: var(--space-sm); }
+
+  .cv-embed-wrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: #000;
+  }
+
+  .yt-facade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    background: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .yt-thumb {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+
+  .yt-facade:hover .yt-thumb { opacity: 0.65; }
+
+  .yt-play-btn {
+    position: relative;
+    z-index: 1;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+    transition: transform 0.15s;
+  }
+
+  .yt-facade:hover .yt-play-btn { transform: scale(1.15); }
+
+  .cv-caption {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    text-align: center;
     margin: 0;
   }
 
