@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://thesocialchicken.github.io',
-  base: '/BaarnsMannenKoor',
+  site: 'https://baarnsmannenkoor.nl',
+  base: '/',
   output: 'static',
 });
