@@ -58,15 +58,68 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
       <div class="events-list">
 
-        <!-- KERSTCONCERT 2026 -->
+        <!-- OPTREDEN KOEPELTJE 5 SEPT 2026 -->
         <article class="event-card" aria-labelledby="event-1-title">
+          <div class="event-date-block" aria-label="Datum">
+            <span class="event-day">SEP</span>
+            <span class="event-month">2026</span>
+          </div>
+          <div class="event-details">
+            <div class="event-tag">Optreden</div>
+            <h3 id="event-1-title" class="event-title">Optreden in het Koepeltje op de Brink</h3>
+            <p class="event-meta">
+              <span>Zaterdag 5 september 2026</span>
+              <span class="event-meta-sep" aria-hidden="true">·</span>
+              <span>Koepeltje op de Brink, Baarn</span>
+              <span class="event-meta-sep" aria-hidden="true">·</span>
+              <span>13:45 – 14:30 uur</span>
+            </p>
+            <p class="event-desc">
+              Een informeel optreden van het Baarns MannenKoor in het Koepeltje op de
+              Brink in Baarn. Kom gerust meeluisteren.
+            </p>
+          </div>
+        </article>
+
+        <!-- THEMACONCERT MUZIEK VAN VERBEELDING 4 OKT 2026 -->
+        <article class="event-card" aria-labelledby="event-2-title">
+          <div class="event-date-block" aria-label="Datum">
+            <span class="event-day">OKT</span>
+            <span class="event-month">2026</span>
+          </div>
+          <div class="event-details">
+            <div class="event-tag">Themaconcert</div>
+            <h3 id="event-2-title" class="event-title">Muziek van Verbeelding</h3>
+            <p class="event-meta">
+              <span>Zondag 4 oktober 2026</span>
+              <span class="event-meta-sep" aria-hidden="true">·</span>
+              <span>De Speeldoos, Baarn</span>
+              <span class="event-meta-sep" aria-hidden="true">·</span>
+              <span>14:30 uur</span>
+            </p>
+            <p class="event-desc">
+              Ons themaconcert Muziek van Verbeelding, met een gevarieerd programma
+              onder leiding van dirigent Mark Walter, in De Speeldoos te Baarn.
+            </p>
+            <!-- REPLACE THIS BLOCK WITH THE TICKET EMBED ONCE RECEIVED -->
+            <div class="ticket-placeholder">
+              <p class="ticket-placeholder-msg">Kaarten binnenkort beschikbaar.</p>
+              <a href={`${base}/contact`} class="btn btn--outline-dark btn--sm">
+                Stel een vraag
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- KERSTCONCERT 2026 -->
+        <article class="event-card" aria-labelledby="event-3-title">
           <div class="event-date-block" aria-label="Datum">
             <span class="event-day">DEC</span>
             <span class="event-month">2026</span>
           </div>
           <div class="event-details">
             <div class="event-tag">Kerstconcert</div>
-            <h3 id="event-1-title" class="event-title">Kerstconcert 2026 – Baarns MannenKoor</h3>
+            <h3 id="event-3-title" class="event-title">Kerstconcert 2026 – Baarns MannenKoor</h3>
             <p class="event-meta">
               <span>Paaskerk Baarn</span>
               <span class="event-meta-sep" aria-hidden="true">·</span>
@@ -81,34 +134,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               <div class="tt-widget"><div class="tt-widget-fallback"><p><a href="https://www.tickettailor.com/all-tickets/baarnsmannenkoor/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true" target="_blank">Koop kaarten</a></p></div><script src="https://cdn.tickettailor.com/js/widgets/min/widget.js" data-url="https://www.tickettailor.com/all-tickets/baarnsmannenkoor/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true" data-type="inline" data-inline-minimal="true" data-inline-show-logo="false" data-inline-bg-fill="false" data-inline-inherit-ref-from-url-param="" data-inline-ref="website_widget"></script></div>
             </div>
 
-          </div>
-        </article>
-
-        <!-- EVENT 2 -->
-        <article class="event-card" aria-labelledby="event-2-title">
-          <div class="event-date-block" aria-label="Datum">
-            <span class="event-day">?</span>
-            <span class="event-month">2026</span>
-          </div>
-          <div class="event-details">
-            <div class="event-tag">Najaarsconcert</div>
-            <h3 id="event-2-title" class="event-title">Najaarsconcert 2026</h3>
-            <p class="event-meta">
-              <span>Locatie volgt</span>
-              <span class="event-meta-sep" aria-hidden="true">·</span>
-              <span>Tijd volgt</span>
-            </p>
-            <p class="event-desc">
-              Ons najaarsconcert met een gevarieerd programma onder leiding van
-              dirigent Mark Walter. Data en locatie worden binnenkort bekendgemaakt.
-            </p>
-            <!-- REPLACE THIS BLOCK WITH YOUR TICKET EMBED -->
-            <div class="ticket-placeholder">
-              <p class="ticket-placeholder-msg">Kaarten binnenkort beschikbaar.</p>
-              <a href={`${base}/contact`} class="btn btn--outline-dark btn--sm">
-                Stel een vraag
-              </a>
-            </div>
           </div>
         </article>
 

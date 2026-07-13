@@ -161,6 +161,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           </p>
           <a href={`${base}/friends`} class="news-link">Word een Vriend &rarr;</a>
         </article>
+
+        <article class="news-item">
+          <div class="news-meta">7 – 26 september 2026</div>
+          <h3 class="news-title">Stem op ons bij Rabo ClubSupport</h3>
+          <p>
+            Het Baarns MannenKoor doet weer mee met Rabo ClubSupport 2026. Ben je
+            lid van de Rabobank? Breng dan tussen 7 en 26 september je stem op ons
+            uit, iedere stem is geld waard voor het koor.
+          </p>
+          <span class="news-link-pending">Stemlink volgt binnenkort</span>
+        </article>
       </div>
     </div>
   </section>
@@ -288,6 +299,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   .news-link:hover {
     color: var(--color-primary);
+  }
+
+  .news-link-pending {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--color-text-muted);
   }
 
   /* CTA Banner */
