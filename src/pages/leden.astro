@@ -13,6 +13,27 @@ const BLADMUZIEK = [
   { id: "rdnm", title: "Rob de Nijs Medley", pdf: "Nr,199 Rob de Nijs medley .pdf" },
   { id: "idd", title: "I Dreamed a Dream", pdf: "Nr,372 I dreamed a dream TTBB.pdf" },
   { id: "lpdp", title: "Les Pêcheurs de Perles", pdf: "Nr,78 Les Pecheurs de Perles Piano.pdf" },
+  { id: "obb", title: "Ode aan Baarn — aanvullend couplet", pdf: "Nr,367b Ode aan Baarn - aanvullend couplet.pdf" },
+];
+
+const BLADMUZIEK_KERST = [
+  { id: "wcod", title: "White Cliffs of Dover", pdf: "Nr,362 White cliffs of Dover TTBB.pdf" },
+  { id: "dsua", title: "Don't Sit Under the Apple Tree", pdf: "Nr,364 Don't sit under the apple tree TTBB.pdf" },
+  { id: "bbp", title: "Beer Barrel Polka", pdf: "Nr,365 Beer Barrel Polka TTBB.pdf" },
+  { id: "yams", title: "You Are My Sunshine", pdf: "Nr,361 You are my sunshine TTBB.pdf" },
+  { id: "tuc", title: "Träume unterm Christbaum", pdf: "Nr,291 Traume unterm Christbaum.pdf" },
+  { id: "sabc", title: "Still a Bach Christmas", pdf: "Nr,292 Still a Bach Christmas met piano TTBB.pdf" },
+  { id: "dyhwih", title: "Do You Hear What I Hear", pdf: "Nr,297 Do You Hear What I Hear TTBB.pdf" },
+  { id: "mw", title: "Mariä Wiegenlied", pdf: "Nr,239 Maria Wiegenlied.pdf" },
+  { id: "ldb", title: "Little Drummer Boy", pdf: "Nr,275 Little Drummer Boy.pdf" },
+  { id: "cdn", title: "Cantique de Noël", pdf: "Nr,206 Cantique de Noel.pdf" },
+  { id: "eier", title: "Es ist ein Ros'entsprungen", pdf: "Nr,230 Es ist ein Ros'entsprungen.pdf" },
+  { id: "tfn", title: "The First Nowell", pdf: "Nr,242 The First Nowell TTBB.pdf" },
+  { id: "iendle", title: "Il est né le divin Enfant", pdf: "Nr,273 Il est ne le divin Enfant.pdf" },
+  { id: "mdyk", title: "Mary Did You Know", pdf: "Nr,295 Mary Did You Know TTBB.pdf" },
+  { id: "fn", title: "Feliz Navidad", pdf: "Nr,296 Feliz Navidad TTBB.pdf" },
+  { id: "jttw", title: "Joy to the World", pdf: "Nr,223 Joy to the World.pdf" },
+  { id: "eemlied", title: "Eemlied", pdf: "Nr,309b Eemlied.pdf" },
 ];
 
 const STEMMEN = [
@@ -27,6 +48,20 @@ const STEMMEN = [
       { stuk: "Rob de Nijs — Zachtjes Tikt de Regen", bestand: "tenoot/Rob de nijs - zachtjes tikt de regen - tenor.m4a" },
       { stuk: "Rob de Nijs — Zet een Kaars", bestand: "tenoot/Rob de nijs - zet een kaars - tenor.m4a" },
       { stuk: "I Dreamed a Dream", bestand: "tenoot/I dreamed a dream - tenor.m4a" },
+      { stuk: "Träume unterm Christbaum", bestand: "tenoot/Traume unterm Christbaum - tenor.m4a" },
+      { stuk: "Still a Bach Christmas", bestand: "tenoot/Still a Bach Christmas - tenor.m4a" },
+      { stuk: "Do You Hear What I Hear", bestand: "tenoot/Do you hear what i hear - tenor.m4a" },
+      { stuk: "Mariä Wiegenlied", bestand: "tenoot/Maria Wiegenlied - tenor.m4a" },
+      { stuk: "Cantique de Noël", bestand: "tenoot/Cantique de Noel - tenor.m4a" },
+      { stuk: "Es ist ein Ros'entsprungen", bestand: "tenoot/Es ist ein Ros'entsprungen - tenor.m4a" },
+      { stuk: "The First Nowell", bestand: "tenoot/The First Nowell - tenor.m4a" },
+      { stuk: "Il est né le divin Enfant", bestand: "tenoot/Il est ne le divin Enfant - tenor.m4a" },
+      { stuk: "Mary Did You Know", bestand: "tenoot/Mary Did You Know - tenor.m4a" },
+      { stuk: "Feliz Navidad", bestand: "tenoot/Feliz Navidad - tenor.m4a" },
+      { stuk: "Joy to the World", bestand: "tenoot/Joy to the World - tenor.m4a" },
+      { stuk: "Joy to the World (2)", bestand: "tenoot/Joy to the World 2 - tenor.m4a" },
+      { stuk: "Joy to the World (3)", bestand: "tenoot/Joy to the World 3 - tenor.m4a" },
+      { stuk: "Joy to the World (4)", bestand: "tenoot/Joy to the World 4 - tenor.m4a" },
     ],
   },
   { stem: "Bas", opnames: [] },
@@ -80,6 +115,40 @@ const STEMMEN = [
 
         <div class="music-list">
           {BLADMUZIEK.map((stuk) => (
+            <details class="music-item" id={`stuk-${stuk.id}`}>
+              <summary class="music-summary">
+                <span class="music-title">{stuk.title}</span>
+                <span class="music-actions">
+                  <a
+                    href={`${base}/bladmuziek/${stuk.pdf}`}
+                    class="btn btn--outline-dark btn--sm"
+                    download
+                    onclick="event.stopPropagation()"
+                  >Downloaden</a>
+                  <span class="music-toggle-icon" aria-hidden="true">▾</span>
+                </span>
+              </summary>
+              <div class="music-viewer">
+                <button class="pdf-fullscreen-btn" onclick="this.nextElementSibling.requestFullscreen()">⛶ Volledig scherm</button>
+                <iframe
+                  src={`${base}/bladmuziek/${stuk.pdf}#view=FitH`}
+                  class="pdf-frame"
+                  title={`Bladmuziek ${stuk.title}`}
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <!-- Kerstrepertoire (archief) -->
+        <div class="section-header" style="margin-top: var(--space-2xl)">
+          <h3>Kerstrepertoire (archief 2024)</h3>
+          <p>Bladmuziek van eerdere kerstconcerten.</p>
+        </div>
+
+        <div class="music-list">
+          {BLADMUZIEK_KERST.map((stuk) => (
             <details class="music-item" id={`stuk-${stuk.id}`}>
               <summary class="music-summary">
                 <span class="music-title">{stuk.title}</span>
