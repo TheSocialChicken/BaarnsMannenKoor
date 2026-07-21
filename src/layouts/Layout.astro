@@ -93,8 +93,6 @@ const navLinks = [
           <span class="logo-sub">Opgericht 1907 &middot; Baarn</span>
         </a>
 
-        <span class="build-info" aria-hidden="true">v{buildSha} &middot; {buildDate}</span>
-
         <button
           class="nav-toggle"
           aria-expanded="false"
@@ -581,7 +579,7 @@ const navLinks = [
     background-color: rgba(201, 146, 58, 0.12);
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1060px) {
     .nav-toggle {
       display: none;
     }
@@ -703,21 +701,6 @@ const navLinks = [
     margin-top: var(--space-xs);
     font-family: monospace;
     letter-spacing: 0.04em;
-  }
-
-  .build-info {
-    display: none;
-    font-family: monospace;
-    font-size: 0.65rem;
-    color: rgba(255, 255, 255, 0.35);
-    letter-spacing: 0.03em;
-    white-space: nowrap;
-    margin-left: auto;
-    padding-right: var(--space-sm);
-  }
-
-  @media (min-width: 1200px) {
-    .build-info { display: block; }
   }
 
   @media (min-width: 640px) {
