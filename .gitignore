@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # VS Code
 .vscode/extensions.json
+
+# raw mail attachments staged for review — may contain internal/financial docs, never publish (repo is public)
+mail-source/
