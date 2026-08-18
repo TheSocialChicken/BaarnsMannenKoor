@@ -112,6 +112,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
                 Reserveer kaarten bij De Speeldoos
               </a>
             </div>
+            <div class="qr-block">
+              <img
+                src={`${base}/images/QRCode.jpeg`}
+                alt="QR code voor kaartreservering Muziek van Verbeelding"
+                class="qr-img"
+              />
+              <p class="qr-caption">Scan voor reserveren</p>
+            </div>
           </div>
         </article>
 
@@ -324,6 +332,29 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   .btn--sm {
     font-size: 0.85rem;
     padding: 0.45rem 1rem;
+  }
+
+  /* QR code */
+  .qr-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
+  }
+
+  .qr-img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+
+  .qr-caption {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0;
   }
 
   /* Past concerts grid */
