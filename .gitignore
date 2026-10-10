@@ -34,3 +34,15 @@ mail-source/
 
 # Per-user email setup files with passwords — never publish
 docs/*-instellingen.md
+
+# Large temp files — WeTransfer downloads, etc.
+wetransfer_*.zip
+*.zip
+
+# Sheet music — local only, not for public repo
+Liedjes/
+
+# Claude internal state
+.claude-flow/
+.claude/.proven-config-version
+.claude/proven-config.json

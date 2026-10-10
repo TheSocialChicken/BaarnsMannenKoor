@@ -37,13 +37,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 <Layout
   title="Concerten & Evenementen"
-  description="Aankomende concerten van het Baarns MannenKoor. Koop kaarten of meld u aan voor onze evenementen in Baarn en omgeving."
+  description="Aankomende concerten van het Baarns Mannenkoor. Koop kaarten of meld je aan voor onze evenementen in Baarn en omgeving."
   activePage="events"
 >
   <Hero
     title="Concerten & Evenementen"
     subtitle="Koorseizoen 2025–2026"
-    description="Kom luisteren naar het Baarns MannenKoor. Wij geven jaarlijks meerdere concerten in Baarn en omgeving."
+    description="Kom luisteren naar het Baarns Mannenkoor. Wij geven jaarlijks meerdere concerten in Baarn en omgeving."
     backgroundImage={`${base}/images/8782@2x.jpg`}
     compact={true}
   />
@@ -75,7 +75,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               <span>13:45 – 14:30 uur</span>
             </p>
             <p class="event-desc">
-              Een informeel optreden van het Baarns MannenKoor in het Koepeltje op de
+              Een informeel optreden van het Baarns Mannenkoor in het Koepeltje op de
               Brink in Baarn. Kom gerust meeluisteren.
             </p>
           </div>
@@ -102,7 +102,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               onder leiding van dirigent Mark Walter, in De Speeldoos te Baarn.
             </p>
             <div class="ticket-placeholder">
-              <p class="ticket-placeholder-msg">Kaarten &euro;17,50 &middot; Theaterzaal</p>
+              <p class="ticket-placeholder-msg">Kaarten &euro;17,50 (volwassenen) &middot; &euro;1,&ndash; (t/m 15 jaar)</p>
               <a
                 href="https://www.speeldoosbaarn.nl/agenda/baarns-mannenkoor-yz74"
                 class="btn btn--primary btn--sm"
@@ -131,7 +131,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
           </div>
           <div class="event-details">
             <div class="event-tag">Kerstconcert</div>
-            <h3 id="event-3-title" class="event-title">Kerstconcert 2026 – Baarns MannenKoor</h3>
+            <h3 id="event-3-title" class="event-title">Kerstconcert 2026 – Baarns Mannenkoor</h3>
             <p class="event-meta">
               <span>Paaskerk Baarn</span>
               <span class="event-meta-sep" aria-hidden="true">·</span>
@@ -141,6 +141,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
               Ons jaarlijkse kerstconcert in de Paaskerk te Baarn. Een ontroerend
               programma van kerstliederen en klassiek koorwerk, samen met speciale gasten.
             </p>
+            <p class="ticket-price-note">Kaarten &euro;17,50 (volwassenen) &middot; &euro;1,&ndash; (t/m 15 jaar)</p>
 
             <div class="tt-widget-container">
               <div class="tt-widget"><div class="tt-widget-fallback"><p><a href="https://www.tickettailor.com/all-tickets/baarnsmannenkoor/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true" target="_blank">Koop kaarten</a></p></div><script src="https://cdn.tickettailor.com/js/widgets/min/widget.js" data-url="https://www.tickettailor.com/all-tickets/baarnsmannenkoor/?ref=website_widget&show_search_filter=true&show_date_filter=true&show_sort=true" data-type="inline" data-inline-minimal="true" data-inline-show-logo="false" data-inline-bg-fill="false" data-inline-inherit-ref-from-url-param="" data-inline-ref="website_widget"></script></div>
@@ -166,7 +167,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         <div class="past-item">
           <img
             src={`${base}/images/concert-poster-kerstkoor.jpg`}
-            alt="Concertposter Geef Vrede een Kans, Kerstconcert Baarns MannenKoor"
+            alt="Concertposter Geef Vrede een Kans, Kerstconcert Baarns Mannenkoor"
             class="past-img"
           />
           <div class="past-info">
@@ -179,7 +180,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         <div class="past-item">
           <img
             src={`${base}/images/concert-poster-all-you-need-is-love.jpg`}
-            alt="Concertposter All You Need is Love, Baarns MannenKoor"
+            alt="Concertposter All You Need is Love, Baarns Mannenkoor"
             class="past-img"
           />
           <div class="past-info">
@@ -192,7 +193,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         <div class="past-item">
           <img
             src={`${base}/images/concert-poster-tram.jpg`}
-            alt="Baarns MannenKoor op de Vorstelijk Baarn Express"
+            alt="Baarns Mannenkoor op de Vorstelijk Baarn Express"
             class="past-img"
           />
           <div class="past-info">
@@ -210,7 +211,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     <div class="container cta-row">
       <div>
         <h2 id="notify-heading">Op de hoogte blijven?</h2>
-        <p>Neem contact op en wij informeren u over aankomende concerten.</p>
+        <p>Neem contact op en wij informeren je over aankomende concerten.</p>
       </div>
       <a href={`${base}/contact`} class="btn btn--primary">Contact opnemen</a>
     </div>
@@ -303,6 +304,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     color: var(--color-text-muted);
     font-size: 0.95rem;
     margin-bottom: var(--space-lg);
+  }
+
+  .ticket-price-note {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
   }
 
   /* TicketTailor widget container */

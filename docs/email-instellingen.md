@@ -1,26 +1,26 @@
 # E-mailinstellingen — Baarns Mannenkoor
 
-_Bijgewerkt: 31 augustus 2026_
+*Bijgewerkt: 31 augustus 2026*
 
 ## Serverinstellingen (zelfde voor iedereen)
 
-| Instelling | Waarde |
-|---|---|
-| IMAP-server | `mail.baarnsmannenkoor.nl` |
-| IMAP-poort | `993` (SSL/TLS) |
-| SMTP-server | `mail.baarnsmannenkoor.nl` |
-| SMTP-poort | `587` (STARTTLS) |
-| Gebruikersnaam | jouw volledige e-mailadres |
-| Wachtwoord | zie KeePass → groep `baarnsmannenkoor.nl` |
+| Instelling     | Waarde                                    |
+|----------------|-------------------------------------------|
+| IMAP-server    | `mail.baarnsmannenkoor.nl`                |
+| IMAP-poort     | `993` (SSL/TLS)                           |
+| SMTP-server    | `mail.baarnsmannenkoor.nl`                |
+| SMTP-poort     | `587` (STARTTLS)                          |
+| Gebruikersnaam | jouw volledige e-mailadres                |
+| Wachtwoord     | zie KeePass → groep `baarnsmannenkoor.nl` |
 
 ## E-mailadressen
 
-| Functie | E-mailadres |
-|---|---|
-| Voorzitter | `voorzitter@baarnsmannenkoor.nl` |
-| Bestuur | `bestuur@baarnsmannenkoor.nl` |
-| Info | `info@baarnsmannenkoor.nl` |
-| Secretaris | `secretaris@baarnsmannenkoor.nl` |
+| Functie        | E-mailadres                          |
+|----------------|--------------------------------------|
+| Voorzitter     | `voorzitter@baarnsmannenkoor.nl`     |
+| Bestuur        | `bestuur@baarnsmannenkoor.nl`        |
+| Info           | `info@baarnsmannenkoor.nl`           |
+| Secretaris     | `secretaris@baarnsmannenkoor.nl`     |
 | Penningmeester | `penningmeester@baarnsmannenkoor.nl` |
 
 ## Gmail (als extra account toevoegen)
