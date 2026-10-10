@@ -36,6 +36,22 @@ const BLADMUZIEK_KERST = [
   { id: "eemlied", title: "Eemlied", pdf: "Nr,309b Eemlied.pdf" },
 ];
 
+const BLADMUZIEK_VERBEELDING = [
+  { id: "cqp", title: "Conquest of Paradise", pdf: "Nr,149 Conquest of Paradise.pdf" },
+  { id: "sky", title: "Skyfall", pdf: "Nr,368 Skyfall ttbb.pdf" },
+  { id: "mem", title: "Memory (Cats)", pdf: "Nr,371 MEMORY -CATS.pdf" },
+  { id: "lac", title: "Lacrymosa", pdf: "Nr,370 Lacrymosa SATB.pdf" },
+  { id: "avg", title: "Ave Maria", pdf: "Nr,369 Ave Maria Gwen arch(1) TTBB.pdf" },
+  { id: "lvda", title: "La vergine degli Angeli", pdf: "Nr,039c La vergine degli Angeli.pdf" },
+  { id: "ssl", title: "Speak Softly, Love", pdf: "Nr,326 Speak Softly, Love SATB  (2).pdf" },
+  { id: "cem", title: "Climb Ev'ry Mountain", pdf: "Nr,138 Climb ev'ry mountain.pdf" },
+  { id: "rol", title: "The Rhythm of Life", pdf: "Nr,148 The Rhythm of Life.pdf" },
+  { id: "ssn", title: "Sure on This Shining Night", pdf: "Nr,338A Sure On This Shining Night TTBB (2x kruis) (1).pdf" },
+  { id: "edw", title: "Edelweiss", pdf: "Nr,177 Edelweiss.pdf" },
+  { id: "tjb", title: "Tjebje Pojiem", pdf: "Nr,099 Tjebje Pojiem.pdf" },
+  { id: "plg", title: "Pelgrim's Chorus", pdf: "Nr,013 Pelgrim's chorus.pdf" },
+];
+
 const STEMMEN = [
   {
     stem: "Tenoot",
@@ -115,6 +131,40 @@ const STEMMEN = [
 
         <div class="music-list">
           {BLADMUZIEK.map((stuk) => (
+            <details class="music-item" id={`stuk-${stuk.id}`}>
+              <summary class="music-summary">
+                <span class="music-title">{stuk.title}</span>
+                <span class="music-actions">
+                  <a
+                    href={`${base}/bladmuziek/${stuk.pdf}`}
+                    class="btn btn--outline-dark btn--sm"
+                    download
+                    onclick="event.stopPropagation()"
+                  >Downloaden</a>
+                  <span class="music-toggle-icon" aria-hidden="true">▾</span>
+                </span>
+              </summary>
+              <div class="music-viewer">
+                <button class="pdf-fullscreen-btn" onclick="this.nextElementSibling.requestFullscreen()">⛶ Volledig scherm</button>
+                <iframe
+                  src={`${base}/bladmuziek/${stuk.pdf}#view=FitH`}
+                  class="pdf-frame"
+                  title={`Bladmuziek ${stuk.title}`}
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </details>
+          ))}
+        </div>
+
+        <!-- Verbeelding 2026 -->
+        <div class="section-header" style="margin-top: var(--space-2xl)">
+          <h3>Verbeelding (najaarsconcert 4 oktober 2026)</h3>
+          <p>Bladmuziek van het najaarsconcert 2026.</p>
+        </div>
+
+        <div class="music-list">
+          {BLADMUZIEK_VERBEELDING.map((stuk) => (
             <details class="music-item" id={`stuk-${stuk.id}`}>
               <summary class="music-summary">
                 <span class="music-title">{stuk.title}</span>
