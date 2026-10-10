@@ -85,7 +85,7 @@ const galleryPhotos = [
     compact={true}
   />
 
-  <!-- ═══════════════════════════════════════ VIDEO CAROUSEL -->
+  <!-- ═══════════════════════════════════════ VIDEO GRID -->
   <section class="section" aria-labelledby="video-heading">
     <div class="container">
       <div class="section-header">
@@ -94,42 +94,28 @@ const galleryPhotos = [
       </div>
 
       {videos.length > 0 ? (
-        <div class="video-carousel" role="region" aria-label="Videogalerij">
-          <div class="video-track" id="video-track">
-            {videos.map((v, i) => (
-              <div class="video-slide" id={`slide-${i}`}>
-                <div class="video-embed-wrap">
-                  <button
-                    class="yt-facade"
-                    data-id={v.id}
-                    data-title={v.title}
-                    aria-label={`Speel video: ${v.title}`}
-                  >
-                    <img
-                      src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
-                      alt={v.title}
-                      loading="lazy"
-                      class="yt-thumb"
-                    />
-                    <span class="yt-play-btn" aria-hidden="true">&#9654;</span>
-                  </button>
-                </div>
-                <p class="video-caption">{v.title}{v.year ? <span class="video-year"> ({v.year})</span> : null}</p>
+        <div class="video-grid" role="list" aria-label="Videogalerij">
+          {videos.map((v) => (
+            <div class="video-item" role="listitem">
+              <div class="video-embed-wrap">
+                <button
+                  class="yt-facade"
+                  data-id={v.id}
+                  data-title={v.title}
+                  aria-label={`Speel video: ${v.title}`}
+                >
+                  <img
+                    src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
+                    alt={v.title}
+                    loading="lazy"
+                    class="yt-thumb"
+                  />
+                  <span class="yt-play-btn" aria-hidden="true">&#9654;</span>
+                </button>
               </div>
-            ))}
-          </div>
-
-          {videos.length > 1 && (
-            <div class="carousel-controls">
-              <button class="carousel-btn" id="prev-btn" aria-label="Vorige video">&#8592;</button>
-              <div class="carousel-dots" id="carousel-dots">
-                {videos.map((_, i) => (
-                  <button class={`dot ${i === 0 ? 'dot--active' : ''}`} data-index={i} aria-label={`Video ${i + 1}`}></button>
-                ))}
-              </div>
-              <button class="carousel-btn" id="next-btn" aria-label="Volgende video">&#8594;</button>
+              <p class="video-caption">{v.title}{v.year ? <span class="video-year"> ({v.year})</span> : null}</p>
             </div>
-          )}
+          ))}
         </div>
       ) : (
         <div class="video-placeholder">
@@ -326,26 +312,6 @@ const galleryPhotos = [
     }, { once: true });
   });
 
-  // ── VIDEO CAROUSEL ──────────────────────────────────────────
-  const track = document.getElementById('video-track');
-  const dots = document.querySelectorAll<HTMLButtonElement>('.dot');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
-
-  if (track && dots.length > 0) {
-    let current = 0;
-
-    function goTo(index: number) {
-      current = (index + dots.length) % dots.length;
-      (track as HTMLElement).style.transform = `translateX(-${current * 100}%)`;
-      dots.forEach((d, i) => d.classList.toggle('dot--active', i === current));
-    }
-
-    prevBtn?.addEventListener('click', () => goTo(current - 1));
-    nextBtn?.addEventListener('click', () => goTo(current + 1));
-    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-  }
-
   // ── LIGHTBOX ────────────────────────────────────────────────
   const lightbox = document.getElementById('lightbox') as HTMLElement | null;
   const lbImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
@@ -402,25 +368,15 @@ const galleryPhotos = [
 </script>
 
 <style>
-  /* ── VIDEO CAROUSEL ── */
-  .video-carousel {
-    max-width: 800px;
-    margin-inline: auto;
+  /* ── VIDEO GRID ── */
+  .video-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
-  .video-track-wrap {
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-  }
-
-  .video-track {
-    display: flex;
-    transition: transform 0.35s ease;
-  }
-
-  .video-slide {
-    flex: 0 0 100%;
-  }
+  @media (min-width: 560px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 900px) { .video-grid { grid-template-columns: repeat(3, 1fr); } }
 
   .video-embed-wrap {
     position: relative;
@@ -477,46 +433,6 @@ const galleryPhotos = [
   }
 
   .video-year { opacity: 0.7; }
-
-  .carousel-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-lg);
-    margin-top: var(--space-lg);
-  }
-
-  .carousel-btn {
-    background: var(--color-primary);
-    color: var(--color-white);
-    border: none;
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background var(--transition);
-  }
-
-  .carousel-btn:hover { background: var(--color-primary-light); }
-
-  .carousel-dots { display: flex; gap: var(--space-sm); }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: none;
-    background: var(--color-border);
-    cursor: pointer;
-    padding: 0;
-    transition: background var(--transition);
-  }
-
-  .dot--active { background: var(--color-accent); }
 
   .video-placeholder {
     text-align: center;
