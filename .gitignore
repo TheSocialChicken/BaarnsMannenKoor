@@ -46,3 +46,6 @@ Liedjes/
 .claude-flow/
 .claude/.proven-config-version
 .claude/proven-config.json
+
+# password databases: never commit
+*.kdbx
