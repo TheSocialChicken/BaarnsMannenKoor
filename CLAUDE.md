@@ -55,7 +55,7 @@ npm run preview   # preview production build locally
 | Role | Name | Email |
 |---|---|---|
 | Voorzitter | Jan Kuijer | voorzitter@baarnsmannenkoor.nl |
-| Vice-voorzitter | Rudolf van Ommen | vicevoorzitter@baarnsmannenkoor.nl |
+| Vice-voorzitter | Rudolf van Ommen | voorzitter@baarnsmannenkoor.nl (shared; no separate vicevoorzitter@ address) |
 | Secretaris | Hans Stalenhoef | secretaris@baarnsmannenkoor.nl |
 | Penningmeester | Herman Brink | penningmeester@baarnsmannenkoor.nl |
 | Bestuurslid | Arie Zonneveld | — |
