@@ -17,6 +17,14 @@ const BLADMUZIEK = [
 ];
 
 const BLADMUZIEK_KERST = [
+  { id: "izje", title: "Izje Cheruvimy (Nr. 202)", pdf: "Nr,202 Izje Cheruvimy tajno TTBB.pdf" },
+  { id: "juljul", title: "Jul, jul, strålande jul (Nr. 298)", pdf: "Nr,298 Jul,jul,strälande jul. TTBB.pdf" },
+  { id: "grmg", title: "God Rest You Merry, Gentlemen (Nr. 232)", pdf: "Nr,232 God rest you, merry gentlemen.pdf" },
+  { id: "snacht", title: "Stille Nacht (Nr. 220a)", pdf: "Nr,220a Stille Nacht .pdf" },
+  { id: "nzw", title: "Nu zijt wellekome (Nr. 208)", pdf: "Nr,208 Nu zijt wellekome.pdf" },
+  { id: "egel", title: "Eeuwen geleden (Nr. 294)", pdf: "Nr,294 Eeuwen geleden.pdf" },
+  { id: "cdn-vert", title: "Cantique de Noël — Vertaling", pdf: "206 vertaling cantique de Noel.pdf" },
+  { id: "cdn", title: "Cantique de Noël (Nr. 206)", pdf: "Nr,206 Cantique de Noel.pdf" },
   { id: "wcod", title: "White Cliffs of Dover", pdf: "Nr,362 White cliffs of Dover TTBB.pdf" },
   { id: "dsua", title: "Don't Sit Under the Apple Tree", pdf: "Nr,364 Don't sit under the apple tree TTBB.pdf" },
   { id: "bbp", title: "Beer Barrel Polka", pdf: "Nr,365 Beer Barrel Polka TTBB.pdf" },
@@ -26,7 +34,6 @@ const BLADMUZIEK_KERST = [
   { id: "dyhwih", title: "Do You Hear What I Hear", pdf: "Nr,297 Do You Hear What I Hear TTBB.pdf" },
   { id: "mw", title: "Mariä Wiegenlied", pdf: "Nr,239 Maria Wiegenlied.pdf" },
   { id: "ldb", title: "Little Drummer Boy", pdf: "Nr,275 Little Drummer Boy.pdf" },
-  { id: "cdn", title: "Cantique de Noël", pdf: "Nr,206 Cantique de Noel.pdf" },
   { id: "eier", title: "Es ist ein Ros'entsprungen", pdf: "Nr,230 Es ist ein Ros'entsprungen.pdf" },
   { id: "tfn", title: "The First Nowell", pdf: "Nr,242 The First Nowell TTBB.pdf" },
   { id: "iendle", title: "Il est né le divin Enfant", pdf: "Nr,273 Il est ne le divin Enfant.pdf" },
@@ -56,6 +63,11 @@ const STEMMEN = [
   {
     stem: "Tenoot",
     opnames: [
+      { stuk: "Izje Cheruvimy", bestand: "tenoot/Izje cheruvimy - tenor.m4a" },
+      { stuk: "Jul, jul, strålande jul", bestand: "tenoot/Jul jul - tenor.m4a" },
+      { stuk: "Jul, jul (uitspraak)", bestand: "tenoot/jul,jul stralande jul uitspraak.mp3" },
+      { stuk: "God Rest You Merry, Gentlemen", bestand: "tenoot/God rest you merry gentlemen - tenor.m4a" },
+      { stuk: "Eeuwen geleden", bestand: "tenoot/Eeuwen geleden - tenor.m4a" },
       { stuk: "Brand New Day", bestand: "tenoot/Brand new day - tenor.m4a" },
       { stuk: "Oklahoma", bestand: "tenoot/Oklahoma tenor.m4a" },
       { stuk: "Rob de Nijs — Dag Zuster", bestand: "tenoot/Rob de Nijs - dag zuster - tenor.m4a" },
@@ -191,10 +203,10 @@ const STEMMEN = [
           ))}
         </div>
 
-        <!-- Kerstrepertoire (archief) -->
+        <!-- Kerstrepertoire -->
         <div class="section-header" style="margin-top: var(--space-2xl)">
-          <h3>Kerstrepertoire (archief 2024)</h3>
-          <p>Bladmuziek van eerdere kerstconcerten.</p>
+          <h3>Kerstrepertoire 2026 &amp; Archief</h3>
+          <p>Bladmuziek voor het komende Kerstconcert 2026 en eerdere kerstconcerten.</p>
         </div>
 
         <div class="music-list">
@@ -255,13 +267,13 @@ const STEMMEN = [
 
         <!-- Repetitieschema -->
         <div class="section-header" style="margin-top: var(--space-3xl)">
-          <h2>Repetitieschema 2026</h2>
+          <h2>Repetitieschema Kerstconcert 2026</h2>
           <hr class="divider" />
-          <p>T.b.v. najaarsconcert <em>De Verbeelding</em> (Escher &amp; Bach) · Generale 3 okt · Concert 4 okt</p>
+          <p>Repetitieschema Kerstconcert · Generale 19 dec · Kerstconcert 20 dec in de Paaskerk</p>
         </div>
 
         <div class="schema-note">
-          <strong>Standaard:</strong> 19:45–22:00 gezamenlijk &nbsp;·&nbsp; Let op: tijden variëren (zie per datum)
+          <strong>Standaard:</strong> Maandagavond 19:45–22:00 in Gebouw De Pool
         </div>
 
         <div class="schema-wrap">
@@ -269,65 +281,58 @@ const STEMMEN = [
             <thead>
               <tr>
                 <th>Datum</th>
-                <th>Eerste deel</th>
-                <th>Tweede deel</th>
+                <th>Repetitieprogramma</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="schema-date">6 juli</td>
-                <td><ul class="stuk-list"><li>Nr. 373 Brand New Day</li><li>Nr. 332 Oklahoma</li><li>Nr. 199 Rob de Nijs Medley</li><li>Nr. 326 Speak Softly Love</li></ul></td>
-                <td><ul class="stuk-list"><li>Nr. 370 Lacrymosa</li><li>Nr. 138 Climb Every Mountain</li></ul></td>
+                <td class="schema-date">26 oktober</td>
+                <td><ul class="stuk-list stuk-list--inline"><li>Nr. 208 Nu zijt wellekome</li><li>Nr. 298 Jul, jul, strålande jul</li><li>Nr. 202 Izje Cheruvimy</li><li>Nr. 206 Cantique de Noël</li><li>Nr. 270 In the Bleak Midwinter</li></ul></td>
               </tr>
               <tr>
-                <td class="schema-date">13 juli</td>
-                <td><ul class="stuk-list"><li>Nr. 370 Lacrymosa</li><li>Nr. 177 Edelweiss</li><li>Nr. 199 Rob de Nijs Medley</li></ul></td>
-                <td><ul class="stuk-list"><li>Nr. 332 Oklahoma</li><li>Nr. 373 Brand New Day</li><li>Nr. 138 Climb Every Mountain</li></ul></td>
-              </tr>
-              <tr>
-                <td class="schema-date">20 juli</td>
-                <td><ul class="stuk-list"><li>Nr. 326 Speak Softly Love</li><li>Nr. 370 Lacrymosa</li><li>Nr. 199 Rob de Nijs Medley</li></ul></td>
-                <td><ul class="stuk-list"><li>Nr. 177 Edelweiss</li><li>Nr. 332 Oklahoma</li><li>Nr. 373 Brand New Day</li></ul></td>
-              </tr>
-              <tr class="schema-vacation">
-                <td class="schema-date">27 jul – 10 aug</td>
-                <td colspan={2}>🏖 Vakantieperiode</td>
-              </tr>
-              <tr>
-                <td class="schema-date">17 augustus</td>
-                <td><ul class="stuk-list"><li>Nr. 373 Brand New Day</li><li>Nr. 332 Oklahoma</li><li>Nr. 199 Rob de Nijs Medley</li></ul></td>
-                <td><ul class="stuk-list"><li>Nr. 326 Speak Softly Love</li><li>Nr. 370 Lacrymosa</li><li>Nr. 138 Climb Every Mountain</li></ul></td>
-              </tr>
-              <tr>
-                <td class="schema-date">24 augustus<br/><span class="schema-note-inline">Gezamenlijk t/m 21:00</span></td>
-                <td><ul class="stuk-list"><li>Nr. 138 Climb Every Mountain</li><li>Nr. 332 Oklahoma</li><li>Nr. 373 Brand New Day</li><li>Nr. 177 Edelweiss</li><li>Nr. 326 Speak Softly Love</li></ul></td>
-                <td><ul class="stuk-list"><li>Nr. 13 Pelgrimskoor</li><li>Nr. 78 Les Pêcheurs de Perles (kort)</li><li>Nr. 148 Rhythm of Life</li><li>Nr. 368 Skyfall</li><li>Nr. 372 I Dreamed a Dream</li></ul></td>
-              </tr>
-              <tr>
-                <td class="schema-date">31 augustus<br/><span class="schema-note-inline">Gezamenlijk t/m 21:00</span></td>
-                <td><ul class="stuk-list"><li>Nr. 199 Rob de Nijs Medley</li><li>Nr. 332 Oklahoma</li><li>Nr. 373 Brand New Day</li><li>Nr. 370 Lacrymosa</li><li>Nr. 138 Climb Every Mountain</li></ul></td>
-                <td><ul class="stuk-list"><li>Nr. 371 Memory</li><li>Nr. 372 I Dreamed a Dream</li><li>Nr. 367 Ode aan Baarn</li><li>Nr. 346 House of the Rising Sun</li></ul></td>
+                <td class="schema-date">2 november</td>
+                <td><ul class="stuk-list stuk-list--inline"><li>Nr. 232 God Rest You Merry Gentlemen</li><li>Nr. 294 Eeuwen geleden</li><li>Nr. 208 Nu zijt wellekome</li><li>Nr. 202 Izje Cheruvimy</li><li>Nr. 298 Jul, jul, strålande jul</li></ul></td>
               </tr>
               <tr class="schema-special">
-                <td class="schema-date">5 september<br/><span class="schema-note-inline">Cultureel festival</span></td>
-                <td colspan={2}><ul class="stuk-list stuk-list--inline"><li>Nr. 13 Pelgrimskoor</li><li>Nr. 78 Les Pêcheurs de Perles (kort)</li><li>Nr. 148 Rhythm of Life</li><li>Nr. 368 Skyfall</li><li>Nr. 367 Ode aan Baarn</li><li>Nr. 346 House of the Rising Sun</li><li>Nr. 371 Memory</li><li>Nr. 372 I Dreamed a Dream</li></ul></td>
+                <td class="schema-date">9 november<br/><span class="schema-note-inline">Vandaag</span></td>
+                <td><ul class="stuk-list stuk-list--inline"><li>Nr. 202 Izje Cheruvimy</li><li>Nr. 270 In the Bleak Midwinter</li><li>Nr. 298 Jul, jul, strålande jul</li><li>Nr. 206 Cantique de Noël</li><li>Nr. 294 Eeuwen geleden</li><li>Nr. 208 Nu zijt wellekome</li></ul></td>
+              </tr>
+              <tr>
+                <td class="schema-date">16 november</td>
+                <td><ul class="stuk-list stuk-list--inline"><li>Nr. 298 Jul, jul, strålande jul</li><li>Nr. 202 Izje Cheruvimy</li><li>Nr. 294 Eeuwen geleden</li><li>Nr. 232 God Rest You Merry Gentlemen</li><li>Nr. 209 Stille Nacht</li></ul></td>
+              </tr>
+              <tr>
+                <td class="schema-date">23 november</td>
+                <td><ul class="stuk-list stuk-list--inline"><li>Nr. 208 Nu zijt wellekome</li><li>Nr. 270 In the Bleak Midwinter</li><li>Nr. 298 Jul, jul, strålande jul</li><li>Nr. 202 Izje Cheruvimy</li><li>Medley</li></ul></td>
+              </tr>
+              <tr>
+                <td class="schema-date">30 november</td>
+                <td><ul class="stuk-list stuk-list--inline"><li>Nr. 206 Cantique de Noël</li><li>Medley</li><li>Nr. 202 Izje Cheruvimy</li><li>Nr. 232 God Rest You Merry Gentlemen</li><li>Nr. 369 Ave Maria</li></ul></td>
+              </tr>
+              <tr>
+                <td class="schema-date">7 december</td>
+                <td><ul class="stuk-list stuk-list--inline"><li>Nr. 294 Eeuwen geleden</li><li>Nr. 298 Jul, jul, strålande jul</li><li>Nr. 369 Ave Maria</li><li>Nr. 209 Stille Nacht</li><li>Medley</li></ul></td>
+              </tr>
+              <tr>
+                <td class="schema-date">14 december</td>
+                <td><ul class="stuk-list stuk-list--inline"><li>Nr. 206 Cantique de Noël</li><li>Nr. 270 In the Bleak Midwinter</li><li>Medley</li><li>Nr. 208 Nu zijt wellekome</li></ul></td>
               </tr>
               <tr class="schema-special">
-                <td class="schema-date">3 oktober</td>
-                <td colspan={2}><strong>Generale repetitie</strong></td>
+                <td class="schema-date">19 december</td>
+                <td colspan={2}><strong>Generale repetitie Kerstconcert</strong></td>
               </tr>
               <tr class="schema-concert">
-                <td class="schema-date">4 oktober</td>
-                <td colspan={2}><strong>🎼 Themaconcert "De Verbeelding"</strong></td>
+                <td class="schema-date">20 december</td>
+                <td colspan={2}><strong>🎄 Kerstconcert 2026 — Paaskerk Baarn (15:00 uur)</strong></td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <div class="download-block" style="margin-top: var(--space-xl)">
-          <p>Schema als Word-document.</p>
-          <a href={`${base}/downloads/Repetitieschema juli & augustus.docx`} class="btn btn--outline-dark" download>
-            Downloaden (.docx)
+          <p>Volledig repetitieschema Kerstconcert downloaden.</p>
+          <a href={`${base}/downloads/Repetitie schema Kerstconcert 2026.pdf`} class="btn btn--outline-dark" download>
+            Downloaden (.pdf)
           </a>
         </div>
 
