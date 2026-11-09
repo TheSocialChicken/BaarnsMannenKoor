@@ -125,6 +125,7 @@ Push to `main` → GitHub Actions builds and deploys automatically.
 - [ ] **Mark Walter — more info** — expand conductor page with his own concerts/performances, recordings, other ensembles he works with
 - [ ] **Newsletter signup** — Mailchimp or Buttondown embed, probably on homepage and membership page
 - [ ] **Downloadable PDFs** — sheet music, flyers (WERVINGSFLYERPROJECTKOOR2026.pdf already in `public/images/`)
+- [ ] **Real protection for member files** — the `/leden/` password only hides the page in the browser; files and the download-all zip are reachable by direct URL, and they sit in this public repo. Preferred fix: Cloudflare Worker + R2 with a server-side password check (same page, one password). Quick alternative: password-protected Nextcloud share of a dedicated choir folder. Either way, remove the files from the repo and its git history.
 
 ### Low priority / polish
 - [ ] **SEO meta tags** — Open Graph image, Twitter card, structured data (LocalBusiness schema for choir)
